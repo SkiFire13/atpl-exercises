@@ -11,7 +11,7 @@
   #parbreak()
   *Solution.* #h(0.5em)
   #content
-  #pagebreak(weak: true)
+  #v(2em)
 ]
 
 #let app = " "
