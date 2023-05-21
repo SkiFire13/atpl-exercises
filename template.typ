@@ -5,7 +5,7 @@
   #v(1em)
 ]
 
-#let template(title: none, author: none, date: none, doc) = [
+#let template(title: none, author: none, date: none) = doc => [
   #set text(font: "New Computer Modern", size: 12pt)
   #set enum(indent: 1em)
   #set list(indent: 1em)
