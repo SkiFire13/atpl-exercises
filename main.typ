@@ -12,3 +12,4 @@
 #include "exercises/ex3.typ"
 #include "exercises/ex4.typ"
 #include "exercises/ex5.typ"
+#include "exercises/ex6.typ"
