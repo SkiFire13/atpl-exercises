@@ -19,3 +19,4 @@
 #include "exercises/ex10.typ"
 #include "exercises/ex11.typ"
 #include "exercises/ex12.typ"
+#include "exercises/ex13.typ"
