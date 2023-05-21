@@ -1,9 +1,15 @@
 #import "template.typ": template
+#import "common.typ": heading_supplement
 
 #show: template(
   title: "Advanced Topics in Programming Languages\nExercises",
   author: "Stevanato Giacomo",
   date: "2nd Semester 2022/23",
+)
+
+#outline(
+  title: "Table of Exercises",
+  target: heading.where(supplement: heading_supplement)
 )
 
 #include "exercises/ex1.typ"
