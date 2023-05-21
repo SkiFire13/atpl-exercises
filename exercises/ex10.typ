@@ -1,5 +1,6 @@
 #import "../common.typ": *
 
+// Note 7 ex 10
 #exercise[
   Consider the following function definitions in Scala:
   ```scala

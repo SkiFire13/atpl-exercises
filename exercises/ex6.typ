@@ -1,5 +1,6 @@
 #import "../common.typ": *
 
+// Note 7 ex 6
 #exercise[
   Examine how the semantics of the language would change by replacing the rule (SUM RIGHT) with the following:
   #align(center, box(prooftree(

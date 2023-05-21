@@ -1,5 +1,6 @@
 #import "../common.typ": *
 
+// Note 7 ex 9
 #exercise[
   Write the transition rules corresponding to the call-by-name strategy, and evaluate the previous term according to this strategy.
 ]

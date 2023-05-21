@@ -2,6 +2,7 @@
 
 #let Subterms = "Subterms"
 
+// Note 5b ex 3
 #exercise[
   Give a formal definition of the notion of subterms of a term M of the language $Llang$.
 ]

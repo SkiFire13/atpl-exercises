@@ -1,5 +1,6 @@
 #import "../common.typ": *
 
+// Note 5b ex 2
 #exercise[
   - Think about the difference between the terms $fn x. 2 + x$ and $fn x. (fn y. (y + x) app 2)$
   - Write a term representing a higher order function, i.e. a function that takes a function as a parameter. Also write a program that somehow uses a higher order function. And finally write a function that returns a function.

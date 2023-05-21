@@ -3,6 +3,7 @@
 #let Terms = "Terms"
 #let fv = "fv"
 
+// Note 6 / Note 7 ex 5
 #exercise[
   - Add to the language $Llang$ a subtraction operation. What needs to be changed, the syntax of terms? the semantics? the syntax of values? the notion of free variables and substitution?
   - Define the reduction relation so that integer operations occur with a right-to-left strategy.

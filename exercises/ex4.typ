@@ -2,6 +2,7 @@
 
 #let fv = "fv"
 
+// Note 6 ex 4
 #exercise[
   Prove by structural induction the following statement: \ "If $x in.not fv(M)$ then the term $M {x := N }$ coincides with $M$."
 ]

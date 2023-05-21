@@ -1,5 +1,6 @@
 #import "../common.typ": *
 
+// Note 7 ex 8
 #exercise[
   Show the evaluation of the term $((fn x. 3) app (fn y. y)) app ((fn z. mif z then 1 melse 0) app (mfalse))$. Define a variant of the evaluation rules so that, by keeping a call-by-value strategy, the previous term evolves to a stuck term in fewer reduction steps.
 ]
