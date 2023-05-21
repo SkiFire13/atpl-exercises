@@ -1,5 +1,4 @@
 #import "../common.typ": *
-#import "../prooftree/prooftree.typ": *
 
 #exercise[
   Examine how the semantics of the language would change by replacing the rule (SUM RIGHT) with the following:

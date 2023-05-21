@@ -1,5 +1,4 @@
 #import "../common.typ": *
-#import "../prooftree/prooftree.typ": *
 
 #let Terms = "Terms"
 #let fv = "fv"

@@ -1,3 +1,5 @@
+#import "prooftree/prooftree.typ": *
+
 #let exercise_counter = counter("exercise")
 #let exercise(content)  = [
   #parbreak()
