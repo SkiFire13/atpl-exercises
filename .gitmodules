@@ -1,0 +1,3 @@
+[submodule "prooftree"]
+	path = prooftree
+	url = https://github.com/SkiFire13/typst-prooftree.git
