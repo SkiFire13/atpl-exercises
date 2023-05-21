@@ -22,3 +22,5 @@
 #let mtrue = "true"
 #let mfalse = "false"
 #let Llang = symbol("\u{2112}")
+
+#let emptyset = text(font: "sans-serif")[ \u{2205} ]

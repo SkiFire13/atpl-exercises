@@ -20,3 +20,6 @@
 #include "exercises/ex11.typ"
 #include "exercises/ex12.typ"
 #include "exercises/ex13.typ"
+#include "exercises/ex14.typ"
+#include "exercises/ex15.typ"
+#include "exercises/ex16.typ"
