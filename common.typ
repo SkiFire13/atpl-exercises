@@ -14,6 +14,9 @@
 
 #let app = " "
 #let fn = "fn"
+#let mif = "if"
+#let then = "then"
+#let melse = "else"
 #let mtrue = "true"
 #let mfalse = "false"
 #let Llang = symbol("\u{2112}")

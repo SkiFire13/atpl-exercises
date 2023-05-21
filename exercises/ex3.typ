@@ -6,7 +6,7 @@
   Give a formal definition of the notion of subterms of a term M of the language $Llang$.
 ]
 #solution[
-  We can define the set of subterms of a term $M$ of $Llang$ by induction on $M$:
+  We can define the set of subterms of a term $M$ of $Llang$ by structural induction on $M$:
   - $Subterms(x) = { x }$
   - $Subterms(n) = { n }$
   - $Subterms(mtrue) = { mtrue }$
