@@ -25,6 +25,19 @@
   #v(2em)
 ]
 
+#let size = math.op("size")
+#let depth = math.op("depth")
+#let Dom = math.op("Dom")
+#let fv = math.op("fv")
+
+#let Llang = symbol("\u{2112}")
+#let Terms = "Terms"
+#let Subterms = "Subterms"
+
+#let Bool = "Bool"
+#let Nat = "Nat"
+
+#let unit = "unit"
 #let app = " "
 #let fn = "fn"
 #let mif = "if"
@@ -32,6 +45,5 @@
 #let melse = "else"
 #let mtrue = "true"
 #let mfalse = "false"
-#let Llang = symbol("\u{2112}")
 
 #let emptyset = text(font: "sans-serif")[ \u{2205} ]

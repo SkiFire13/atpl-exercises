@@ -1,7 +1,5 @@
 #import "../common.typ": *
 
-#let unit = "unit"
-
 // Note 7 ex 12
 #exercise[
   Consider the logical construct `x && y` commonly used in the programming languages, which only evaluates the second argument if `x` is true:

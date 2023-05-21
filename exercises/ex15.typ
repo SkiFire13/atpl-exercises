@@ -1,7 +1,5 @@
 #import "../common.typ": *
 
-#let Bool = "Bool"
-
 // Note 9 ex 3
 #exercise[
   Find a context $Gamma$ such that the judgment $Gamma tack.r z app x app y: Bool$ is derivable.

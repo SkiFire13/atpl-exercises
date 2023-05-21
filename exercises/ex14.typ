@@ -1,7 +1,5 @@
 #import "../common.typ": *
 
-#let Nat = "Nat"
-
 // Note 9 ex 2
 #exercise[
   Consider the term $M = (fn x: Nat. mtrue) app mfalse$. Is it a well-typed term? Is it a term whose execution produces a runtime error?

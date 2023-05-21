@@ -1,8 +1,5 @@
 #import "../common.typ": *
 
-#let size = "size"
-#let depth = "depth"
-
 // Note 4 ex 1
 #exercise[Prove that $forall e in "Exp", size(e) > 0$ and $depth(e) > 0$.]
 #solution[
