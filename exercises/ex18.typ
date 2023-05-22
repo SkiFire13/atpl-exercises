@@ -19,6 +19,10 @@
     Since $Gamma tack.r M_1 + M_2: T$, by inversion lemma (4) we know that $Gamma tack.r M_1: Nat$ and $Gamma tack.r M_2: Nat$. \
     Thus by inductive hypothesis $forall M' in Subterms(M_i). exists Gamma', T'. Gamma' tack.r M': T'$.\
     Thus the property holds $forall M' in Subterms(M)$
+  - $M = mif M_1 then M_2 melse M_3$, then $Subterms(M) = {M} union Subterms(M_1) union Subterms(M_2) union Subterms(M_3)$ \
+    Since $Gamma tack.r mif M_1 then M_2 melse M_3: T$ by inversion lemma (5) $Gamma tack.r M_1 : Bool$, $Gamma tack.r M_2: T$ and $Gamma tack.r M_3: T$. \
+    Thus by inductive hypothesis $forall M' in Subterms(M_i). Gamma tack.r M': T'$ \
+    Thus the property holds $forall M' in Subterms(M)$
   - $M = fn x: T_1. M'$, then $Subterms(M) = {M} union Subterms(M')$. \
     Since $Gamma tack.r fn x: T_1. M : T$, by inversion lemma (7) $exists T_2. Gamma, x: T_1 tack.r M' : T_2$. \
     Thus by inductive hypothesis $forall M'' in Subterms(M'). exists Gamma', T'. Gamma' tack.r M'': T''$. \

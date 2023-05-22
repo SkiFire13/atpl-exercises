@@ -11,6 +11,7 @@
   - $Subterms(mtrue) = { mtrue }$
   - $Subterms(mfalse) = { mfalse }$
   - $Subterms(M_1 + M_2) = {M_1 + M_2} union Subterms(M_1) union Subterms(M_2)$
+  - $Subterms(mif M_1 then M_2 melse M_3) = { M } union Subterms(M_1) union$ $union Subterms(M_2) union Subterms(M_3)$
   - $Subterms(fn x. M) = {fn x. M} union Subterms(M)$
   - $Subterms(M_1 app M_2) = {M_1 app M_2} union Subterms(M_1) union Subterms(M_2)$
 ]
