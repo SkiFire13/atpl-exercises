@@ -32,3 +32,5 @@
 #include "exercises/ex18.typ"
 #include "exercises/ex19.typ"
 #include "exercises/ex20.typ"
+#include "exercises/ex21.typ"
+#include "exercises/ex22.typ"
