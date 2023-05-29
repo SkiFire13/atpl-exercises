@@ -34,3 +34,6 @@
 #include "exercises/ex20.typ"
 #include "exercises/ex21.typ"
 #include "exercises/ex22.typ"
+#include "exercises/ex23.typ"
+#include "exercises/ex24.typ"
+#include "exercises/ex25.typ"
