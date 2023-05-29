@@ -16,5 +16,5 @@
   ]
 ]
 #solution[
-  No because the proof for the canonical form lemma would fail and with it all the other proofs. For example $(fn x: Bool. mif x then 0 melse 0) app 0$ would be well typed, but after the first reduction we would get $mif 0 then 0 melse 0$ which is stuck and not well typed.
+  No because the proof for the inversion lemma would fail and with it all the other proofs. For example $(fn x: Bool. mif x then 0 melse 0) app 0$ would be well typed, but after the first reduction we would get $mif 0 then 0 melse 0$ which is stuck and not well typed.
 ]
