@@ -42,6 +42,7 @@
 
 #let Bool = "Bool"
 #let Nat = "Nat"
+#let Unit = "Unit"
 
 #let unit = "unit"
 #let app = " "
