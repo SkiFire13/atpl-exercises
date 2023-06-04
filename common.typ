@@ -2,20 +2,26 @@
 
 #let heading_supplement() = {}
 
-#let index_exercise_counter = counter("index_exercise")
-#let exercise_counter = counter("exercise")
-#let exercise(content)  = [
-  // Fake heading for the table of exercises
-  #show heading.where(supplement: heading_supplement): it => {}
-  #heading(supplement: heading_supplement)[
-    #index_exercise_counter.step()
-    Exercise #index_exercise_counter.display()
-  ]
+#let typst_label = label
 
-  // Actual header
-  #parbreak()
-  #exercise_counter.step()
-  *Exercise #exercise_counter.display().* #h(0.5em)
+#let exercise(label: none, content)  = [
+  #box[
+    #heading(
+      numbering: i => text(size: 12pt)[ Exercise #i. ],
+      supplement: "",
+      ""
+    )
+    #place[
+      #show figure.where(supplement: "Exercise"): it => {}
+      #figure(
+        {},
+        supplement: "Exercise",
+        outlined: false
+      )
+      #if label != none { typst_label(label) }
+    ]
+  ]
+  #h(0.5em)
   #content
 ]
 #let solution(content) = [

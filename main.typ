@@ -7,10 +7,7 @@
   date: "2nd Semester 2022/23",
 )
 
-#outline(
-  title: "Table of Exercises",
-  target: heading.where(supplement: heading_supplement)
-)
+#outline(title: "Table of Exercises")
 
 #include "exercises/ex1.typ"
 #include "exercises/ex2.typ"
