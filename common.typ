@@ -53,4 +53,6 @@
 #let mtrue = "true"
 #let mfalse = "false"
 
+#let ell = text("\u{1D4C1}", font: "cmsy10")
+
 #let emptyset = text(font: "sans-serif")[ \u{2205} ]
