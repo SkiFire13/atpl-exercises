@@ -52,6 +52,8 @@
 #let melse = "else"
 #let mtrue = "true"
 #let mfalse = "false"
+#let match = "match"
+#let case = "case"
 
 #let ell = text("\u{1D4C1}", font: "cmsy10")
 
