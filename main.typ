@@ -47,3 +47,8 @@
 #include "exercises/ex36.typ"
 #include "exercises/ex37.typ"
 #include "exercises/ex38.typ"
+#include "exercises/ex39.typ"
+#include "exercises/ex40.typ"
+#include "exercises/ex41.typ"
+#include "exercises/ex42.typ"
+#include "exercises/ex43.typ"
