@@ -1,6 +1,6 @@
 #import "../common.typ": *
 
-// Note 13 ex 12
+// Note 13 ex 18
 #exercise[
   Study a variant of this language that admits a default case in the pattern matching operation.
 ]
