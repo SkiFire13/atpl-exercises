@@ -40,10 +40,11 @@
   #set text(size: 12pt)
   We also need to update our notion of free variables and substitution.
 
-  - $fv(M match { case l_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f }) = fv(M) union fv(M_f) union union.big_(i in 1..n) fv(M_i) without {x_i}$
+  - $fv(M match { case l_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f }) =$
+    $= fv(M) union fv(M_f) union union.big_(i in 1..n) fv(M_i) without {x_i}$
 
-  - $M match { case l_i = x_i => M_i  #h(1pt) ^  (i in 1..n), default M_f} {x := N} =$
-    $M { x:= N } match { case l_i = x_i => M_i {x := N}  #h(1pt) ^  (i in 1..n), default M_f {x := N}}$ where $x != x_i$
+  - $M match { case l_i = x_i => M_i  #h(1pt) ^ (i in 1..n), default M_f} {x := N} =$
+    $= M { x:= N } match { case l_i = x_i => M_i {x := N}  #h(1pt) ^ (i in 1..n), default M_f {x := N}}$ where $x != x_i$
 
   We can prove safety for the new language:
   - *Inversion of typing*: We add the following case:
