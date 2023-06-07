@@ -6,11 +6,11 @@
 
   #set text(size: 10pt)
   #align(center, box(prooftree(
-    axiom($Gamma tack.r M : angle.l l_i : T_i^(i in 1 .. m) angle.r$),
+    axiom($Gamma tack.r M : angle.l l_i : T_i #h(1pt) ^ (i in 1 .. m) angle.r$),
     axiom($m gt.eq n$),
     axiom($forall i in 1..n quad Gamma, x_i : T_i tack.r M_i : T$),
     rule(n: 3, label: "TYPE MATCH GEN 1",
-        $Gamma tack.r M match { case l_i = x_i arrow.r.double M_i^(i in 1..n) } : T$)
+        $Gamma tack.r M match { case l_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n) } : T$)
   )))
   Prove that the safety theorem still holds or give a counterexample.
 ]
