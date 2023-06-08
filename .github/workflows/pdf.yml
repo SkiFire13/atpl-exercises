@@ -1,0 +1,42 @@
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Compile to PDF
+        uses: docker://ghcr.io/typst/typst
+        with:
+          entrypoint: typst
+          args: compile main.typ ATPL-Exercises.pdf
+
+      - name: List, filter and delete old artifacts
+        uses: actions/github-script@v6
+        id: artifact
+        with:
+          script: |
+            const res = await github.rest.actions.listArtifactsForRepo(context.repo)
+
+            res.data.artifacts
+              .filter(({ name }) => name === 'ATPL-Exercises')
+              .forEach(({ artifact_id }) => {
+                github.actions.deleteArtifact({ ...context.repo, artifact_id })
+              })
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ATPL-Exercises
+          path: ATPL-Exercises.pdf
