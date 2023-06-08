@@ -67,6 +67,12 @@
   #raw("class " + A + " extends " + B + " {...}", lang: "java")
 ]
 
+#let fwType(context, term, type) = [
+  $#context tack.r$
+  #raw(term, lang: "java")
+  $: #type$
+]
+
 #let size = math.op("size")
 #let depth = math.op("depth")
 #let Dom = math.op("Dom")
