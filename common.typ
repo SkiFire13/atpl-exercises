@@ -40,6 +40,33 @@
   }
 }
 
+#let fwReduction(lhs, rhs) = [
+  #raw(lhs, lang: "java") $arrow$ #raw(rhs, lang: "java")
+]
+
+#let fwFields(className, ..fields) = [
+  $"fields"(#className) = {$
+  #fields.pos().join(", ")
+  $}$
+]
+
+#let fwLookup(className, field) = [
+  $#field in "fields"(#className)$
+]
+
+#let fwMBody(method, className, ..args, body) = [
+  $"mbody"(#method, #className) = (($
+  #args.pos().join(", ")
+  $),$
+  #raw(body, lang: "java")
+  $)$
+]
+
+#let fwExtends(A, B) = [
+  $"CT"(#A) = $
+  #raw("class " + A + " extends " + B + " {...}", lang: "java")
+]
+
 #let size = math.op("size")
 #let depth = math.op("depth")
 #let Dom = math.op("Dom")
@@ -52,6 +79,7 @@
 #let Bool = "Bool"
 #let Nat = "Nat"
 #let Unit = "Unit"
+#let Pair = "Pair"
 
 #let unit = "unit"
 #let app = " "
