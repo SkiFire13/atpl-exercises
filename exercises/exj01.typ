@@ -9,17 +9,17 @@
   ```java
   class A extends Object {
     B b;
-    A() {
+    A(B b) {
       super();
-      this.b = new B();
+      this.b = b;
     }
   }
 
   class B extends Object {
     A a;
-    B() {
+    B(A a) {
       super();
-      this.a = new A();
+      this.a = a;
     }
   }
   ```
