@@ -55,6 +55,11 @@
 #let match = "match"
 #let case = "case"
 #let default = "default"
+#let try = "try"
+#let throw = "throw"
+#let catch = "catch"
+#let even = "even"
+#let print = "print"
 
 #let ell = text("\u{1D4C1}", font: "cmsy10")
 
