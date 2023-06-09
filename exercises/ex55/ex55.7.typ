@@ -1,21 +1,19 @@
 #import "../../common.typ": *
 
-#let Mp = $M#sub[p]$
-
 #[
   #set text(size: 7pt)
   #align(center)[
     #box(prooftree(
       axiom(""),
-      rule(label: "(BETA)", $fn y:Nat. (try (Mp app y) catch fn z.print(z)) app 5 -> try (Mp app 5) catch fn z.print(z)$),
-      rule(label: "(TRY)", $try [fn y:Nat. (try (Mp app y) catch fn z.print(z)) app 5] catch fn y.y + y -> try (try (Mp app 5) catch fn z.print(z)) catch fn y.y + y$)
+      rule(label: "(BETA)", $fn y:Nat. (try (M_p app y) catch fn z.print(z)) app 5 -> try (M_p app 5) catch fn z.print(z)$),
+      rule(label: "(TRY)", $try [fn y:Nat. (try (M_p app y) catch fn z.print(z)) app 5] catch fn y.y + y -> try (try (M_p app 5) catch fn z.print(z)) catch fn y.y + y$)
     ))
     #v(1em)
     #box(prooftree(
       axiom(""),
-      rule(label: "(BETA)", $Mp app 5 -> mif even (5) then 5\/2 melse throw 5$),
-      rule(label: "(TRY)", $try (Mp app 5) catch fn z.print(z) -> try (mif even (5) then 5\/2 melse throw 5) catch fn z.print(z)$),
-      rule(label: "(TRY)", $try (try (Mp app 5) catch fn z.print(z)) catch fn y.y + y -> try (try (mif even (5) then 5\/2 melse throw 5) catch fn z.print(z)) catch fn y.y + y$)
+      rule(label: "(BETA)", $M_p app 5 -> mif even (5) then 5\/2 melse throw 5$),
+      rule(label: "(TRY)", $try (M_p app 5) catch fn z.print(z) -> try (mif even (5) then 5\/2 melse throw 5) catch fn z.print(z)$),
+      rule(label: "(TRY)", $try (try (M_p app 5) catch fn z.print(z)) catch fn y.y + y -> try (try (mif even (5) then 5\/2 melse throw 5) catch fn z.print(z)) catch fn y.y + y$)
     ))
     #v(1em)
     #set text(size: 6pt)
