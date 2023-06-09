@@ -31,8 +31,8 @@ jobs:
 
             res.data.artifacts
               .filter(({ name }) => name === 'ATPL-Exercises')
-              .forEach(({ artifact_id }) => {
-                github.actions.deleteArtifact({ ...context.repo, artifact_id })
+              .forEach(({ id }) => {
+                github.rest.actions.deleteArtifact({ ...context.repo, artifact_id: id })
               })
 
       - name: Upload artifact
