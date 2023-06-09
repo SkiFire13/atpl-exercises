@@ -1,27 +1,25 @@
 #import "../../common.typ": *
 
-#let Mp = $M#sub[p]$
-
 #[
   #set text(size: 9pt)
   #align(center)[
     #box(prooftree(
       axiom(""),
-      rule(label: "(BETA)", $fn z:Bool. (Mp app mif z then 3 melse 6) app mfalse] -> Mp app mif mfalse then 3 melse 6$),
-      rule(label: "(TRY)", $try [fn z:Bool. (Mp app mif z then 3 melse 6) app mfalse] catch fn y.y + y -> try (Mp app mif mfalse then 3 melse 6) catch fn y.y + y$)
+      rule(label: "(BETA)", $fn z:Bool. (M_p app mif z then 3 melse 6) app mfalse] -> M_p app mif mfalse then 3 melse 6$),
+      rule(label: "(TRY)", $try [fn z:Bool. (M_p app mif z then 3 melse 6) app mfalse] catch fn y.y + y -> try (M_p app mif mfalse then 3 melse 6) catch fn y.y + y$)
     ))
     #v(1em)
     #box(prooftree(
       axiom(""),
       rule(label: "(IF FALSE)", $mif mfalse then 3 melse 6 -> 6$),
-      rule(label: "(APP 2)", $Mp app mif mfalse then 3 melse 6 -> Mp app 6$),
-      rule(label: "(TRY)", $try (Mp app mif mfalse then 3 melse 6) catch fn y.y + y -> try (Mp app 6) catch fn y.y + y$)
+      rule(label: "(APP 2)", $M_p app mif mfalse then 3 melse 6 -> M_p app 6$),
+      rule(label: "(TRY)", $try (M_p app mif mfalse then 3 melse 6) catch fn y.y + y -> try (M_p app 6) catch fn y.y + y$)
     ))
     #v(1em)
     #box(prooftree(
       axiom(""),
-      rule(label: "(BETA)", $Mp app 6 -> mif even (6) then 6\/2 melse throw 6$),
-      rule(label: "(TRY)", $try (Mp app 6) catch fn y.y + y -> try (mif even (6) then 6\/2 melse throw 6) catch fn y.y + y$)
+      rule(label: "(BETA)", $M_p app 6 -> mif even (6) then 6\/2 melse throw 6$),
+      rule(label: "(TRY)", $try (M_p app 6) catch fn y.y + y -> try (mif even (6) then 6\/2 melse throw 6) catch fn y.y + y$)
     ))
     #v(1em)
     #box(prooftree(

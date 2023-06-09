@@ -1,14 +1,12 @@
 #import "../../common.typ": *
 
-#let Np = $N#sub[p]$
-
 #[
   #set text(size: 7pt)
   #align(center)[
     #box(prooftree(
       axiom(""),
-      rule(label: "(BETA)", $Np app 3 -> try (mif even(3) then 3\/2 melse throw 3)$),
-      rule(label: "(TRY)", $try (Np app 3) catch fn y.y -> try (try (mif even(3) then 3\/2 melse throw 3) catch fn z.0) catch fn y.y$)
+      rule(label: "(BETA)", $N_p app 3 -> try (mif even(3) then 3\/2 melse throw 3)$),
+      rule(label: "(TRY)", $try (N_p app 3) catch fn y.y -> try (try (mif even(3) then 3\/2 melse throw 3) catch fn z.0) catch fn y.y$)
     ))
     #v(1em)
     #box(prooftree(

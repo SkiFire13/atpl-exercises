@@ -1,14 +1,12 @@
 #import "../../common.typ": *
 
-#let Mp = $M#sub[p]$
-
 #[
   #set text(size: 9pt)
   #align(center)[
     #box(prooftree(
       axiom(""),
-      rule(label: "(BETA)", $Mp app 3 -> mif even (3) then 3\/2 melse throw 3$),
-      rule(label: "(TRY)", $try (Mp app 3) catch fn y.y + y -> try (mif even (3) then 3\/2 melse throw 3) catch fn y.y + y$)
+      rule(label: "(BETA)", $M_p app 3 -> mif even (3) then 3\/2 melse throw 3$),
+      rule(label: "(TRY)", $try (M_p app 3) catch fn y.y + y -> try (mif even (3) then 3\/2 melse throw 3) catch fn y.y + y$)
     ))
     #v(1em)
     #box(prooftree(

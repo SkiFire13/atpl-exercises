@@ -1,20 +1,18 @@
 #import "../../common.typ": *
 
-#let Mp = $M#sub[p]$
-
 #[
   #set text(size: 9pt)
   #align(center)[
     #box(prooftree(
       axiom(""),
-      rule(label: "(BETA)", $fn y:Nat. (Mp app y) app 5 -> Mp app 5$),
-      rule(label: "(TRY)", $try (fn y:Nat. (Mp app y) app 5) catch fn y.y + y -> try (Mp app 5) catch fn y.y + y$)
+      rule(label: "(BETA)", $fn y:Nat. (M_p app y) app 5 -> M_p app 5$),
+      rule(label: "(TRY)", $try (fn y:Nat. (M_p app y) app 5) catch fn y.y + y -> try (M_p app 5) catch fn y.y + y$)
     ))
     #v(1em)
     #box(prooftree(
       axiom(""),
-      rule(label: "(BETA)", $Mp app 5 -> mif even (5) then 5\/2 melse throw 5$),
-      rule(label: "(TRY)", $try (Mp app 5) catch fn y.y + y -> try (mif even (5) then 5\/2 melse throw 5) catch fn y.y + y$)
+      rule(label: "(BETA)", $M_p app 5 -> mif even (5) then 5\/2 melse throw 5$),
+      rule(label: "(TRY)", $try (M_p app 5) catch fn y.y + y -> try (mif even (5) then 5\/2 melse throw 5) catch fn y.y + y$)
     ))
     #v(1em)
     #box(prooftree(

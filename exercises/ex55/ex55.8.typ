@@ -1,17 +1,15 @@
 #import "../../common.typ": *
 
-#let Mp = $M#sub[p]$
-
 #[
   #set text(size: 6pt)
   #align(center)[
     #box(prooftree(
       axiom(""),
-      rule(label: "(BETA)", $Mp app 5-> mif even(5) then 5\/2 melse throw 5$),
-      rule(label: "(TRY)", $try (Mp app 5) catch fn z.z+z -> try (mif even(5) then 5\/2 melse throw 5) catch fn z.z+z$),
-      rule(label: "(APP 2)", $2 app (try (Mp app 5) catch fn z.z+z) -> 2 app (try (mif even(5) then 5\/2 melse throw 5) catch fn z.z+z)$),
-      rule(label: "(SUM RIGHT)", $fn y.y + 2 app (try (Mp app 5) catch fn z.z+z) -> fn y.y + 2 app (try (mif even(5) then 5\/2 melse throw 5) catch fn z.z+z)$),
-      rule(label: "(TRY)", $try (fn y.y + 2 app (try (Mp app 5) catch fn z.z+z)) catch fn z.print(z) -> try (fn y.y + 2 app (try (mif even(5) then 5\/2 melse throw 5) catch fn z.z+z)) catch fn z.print(z)$)
+      rule(label: "(BETA)", $M_p app 5-> mif even(5) then 5\/2 melse throw 5$),
+      rule(label: "(TRY)", $try (M_p app 5) catch fn z.z+z -> try (mif even(5) then 5\/2 melse throw 5) catch fn z.z+z$),
+      rule(label: "(APP 2)", $2 app (try (M_p app 5) catch fn z.z+z) -> 2 app (try (mif even(5) then 5\/2 melse throw 5) catch fn z.z+z)$),
+      rule(label: "(SUM RIGHT)", $fn y.y + 2 app (try (M_p app 5) catch fn z.z+z) -> fn y.y + 2 app (try (mif even(5) then 5\/2 melse throw 5) catch fn z.z+z)$),
+      rule(label: "(TRY)", $try (fn y.y + 2 app (try (M_p app 5) catch fn z.z+z)) catch fn z.print(z) -> try (fn y.y + 2 app (try (mif even(5) then 5\/2 melse throw 5) catch fn z.z+z)) catch fn z.print(z)$)
     ))
     #v(1em)
     #box(prooftree(
