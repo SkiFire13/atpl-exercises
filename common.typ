@@ -31,6 +31,19 @@
   #v(2em)
 ]
 
+#let sub_exercises(ex, amount) = {
+    for i in range(amount) {
+    [
+      #include "exercises/ex" + str(ex) + "/ex" + str(ex) + "." + {str(i + 1)} + ".typ"
+      #if i + 1 != amount [
+        #v(2em)
+        #line(length: 100%)
+        #v(2em)
+      ]
+    ]
+  }
+}
+
 #let size = math.op("size")
 #let depth = math.op("depth")
 #let Dom = math.op("Dom")

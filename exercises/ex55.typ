@@ -17,14 +17,5 @@
   Show the operational semantics of the terms above, observing how the raising of the exception causes a non local jump of the control flow.
 ]
 #solution[
-  #for i in range(9) {
-    [
-      #include "ex55/ex55." + {str(i + 1)} + ".typ"
-      #if i + 1 != 9 [
-        #v(2em)
-        #line(length: 100%)
-        #v(2em)
-      ]
-    ]
-  }
+  #sub_exercises(55, 9)
 ]
