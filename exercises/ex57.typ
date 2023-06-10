@@ -10,15 +10,6 @@
 ]
 #solution[
   #[
-    #for i in range(4) {
-      [
-        #include "ex57/ex57." + {str(i + 1)} + ".typ"
-        #if i + 1 != 4 [
-          #v(2em)
-          #line(length: 100%)
-          #v(2em)
-        ]
-      ]
-    }
+    #sub_exercises(57, 4)
   ]
 ]
