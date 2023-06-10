@@ -9,7 +9,5 @@
   Prove that the terms $M_1, M_2, M_3, M_4$ defined above respect the safety theorem.
 ]
 #solution[
-  #[
-    #sub_exercises(57, 4)
-  ]
+  #sub_exercises(57, 4) 
 ]
