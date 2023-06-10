@@ -1,6 +1,6 @@
 #import "../common.typ": *
 
-// Note 16 ex 2
+// Note 16 ex 5
 #exercise[
   Prove the following statement or find a counterexample:
   
