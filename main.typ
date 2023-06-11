@@ -52,6 +52,7 @@
 #include "exercises/ex41.typ"
 #include "exercises/ex42.typ"
 #include "exercises/ex43.typ"
+// TODO: Exercises from 44 to 55 (Note 15 1-11)
 #include "exercises/ex55.typ"
 #include "exercises/ex56.typ"
 #include "exercises/ex57.typ"
