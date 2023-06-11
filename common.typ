@@ -1,7 +1,5 @@
 #import "prooftree/prooftree.typ": *
 
-#let heading_supplement() = {}
-
 #let typst_label = label
 
 #let exercise(label: none, content)  = [

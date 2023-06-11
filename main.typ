@@ -1,5 +1,4 @@
 #import "template.typ": template
-#import "common.typ": heading_supplement
 
 #show: template(
   title: "Advanced Topics in Programming Languages\nExercises",
