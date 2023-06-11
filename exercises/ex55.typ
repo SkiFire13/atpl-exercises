@@ -2,7 +2,7 @@
 
 // Note 16 ex 1
 #exercise[
-  - $M_p = fn x:Nat. (mif even (x) then x\/2 melse throw x)$
+  - $M_p = fn x:Nat. (mif even(x) then x\/2 melse throw x)$
   - $N_p = fn x:Nat. try (mif even(x) then x\/2 melse throw x) catch fn z.0$
 
   + $try (M_p app 3) catch fn y.y + y$
