@@ -8,6 +8,6 @@
 
 #outline(title: "Table of Exercises")
 
-#for i in range(59) {
+#for i in range(66) {
   include "exercises/ex" + str(i+1) + ".typ"
 }
