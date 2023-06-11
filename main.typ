@@ -52,3 +52,8 @@
 #include "exercises/ex41.typ"
 #include "exercises/ex42.typ"
 #include "exercises/ex43.typ"
+#include "exercises/ex55.typ"
+#include "exercises/ex56.typ"
+#include "exercises/ex57.typ"
+#include "exercises/ex58.typ"
+#include "exercises/ex59.typ"
