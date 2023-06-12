@@ -22,37 +22,33 @@
     )))
 
   - ```java new Pair(new A(), new B()).setfst(new B())```
-    #set text(size: 8pt)
-    #align(center, box(prooftree(
+    #text(size: 8pt, align(center, box(prooftree(
       axiom(fwMBody("setfst", "Pair", "newfst", "new Pair(newfst, this.snd)")),
       axiom($1 = 1$),
       rule(n: 2, label: "(InvkNew)", fwReduction("new Pair(new A(), new B()).setfst(new B())", "new Pair(new B(), new Pair(new A(), new B()).snd)"))
-    )))
+    ))))
 
-    #set text(size: 10pt)
-    #align(center, box(prooftree(
+    #text(size: 10pt, align(center, box(prooftree(
       axiom(pairFields),
       axiom(fwLookup("Pair", "snd")),
       rule(n: 2, label: "(ProjNew)", fwReduction("new Pair(new A(), new B()).snd", "new B()")),
       rule(label: "(newArg)", fwReduction("new Pair(new B(), new Pair(new A(), new B()).snd)", "new Pair(new B(), new B())"))
-    )))
+    ))))
 
-  #set text(size: 12pt)
   - ```java ((Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)).snd```
-    #set text(size: 8pt)
-    #align(center, box(prooftree(
+    #text(size: 8pt, align(center, box(prooftree(
       axiom(pairFields),
       axiom(fwLookup("Pair", "fst")),
       rule(n: 2, label: "(PorojNew)", fwReduction("new Pair(new Pair(new A(), new B()), new A()).fst", "new Pair(new A(), new B())")),
       rule(label: "(Cast)", fwReduction("(Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)", "(Pair) (new Pair(new A(), new B()))")),
       rule(label: "(Field)", fwReduction("((Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)).snd", "((Pair) (new Pair(new A(), new B()))).snd"))
-    )))
+    ))))
 
-    #align(center, box(prooftree(
+    #text(size: 11pt, align(center, box(prooftree(
       axiom(label: "(Reflex)", $Pair <: Pair$),
       rule(label: "(CastNew)", fwReduction("(Pair) new Pair(new A(), new B())", "new Pair(new A(), new B())")),
       rule(label: "(Field)", fwReduction("((Pair) (new Pair(new A(), new B())).snd", "(new Pair(new A(), new B())).snd"))
-    )))
+    ))))
 
     #align(center, box(prooftree(
       axiom(pairFields),
@@ -60,7 +56,6 @@
       rule(n: 2, label: "(ProjNew)", fwReduction("(new Pair(new A(), new B())).snd", "new B()"))
     )))
 
-    #set text(size: 12pt)
   - ```java (B) ((A)new C())```
     #align(center, box(prooftree(
       axiom(fwExtends("C", "B")),
