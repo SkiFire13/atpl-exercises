@@ -15,9 +15,31 @@
 
   It is well-typed:
 
+    #set text(size: 12pt)
+    $pi_("av") =$
+    #align(center, box(prooftree(
+      axiom($0 = 0$),
+      axiom(fwFields("A")),
+      rule(n: 2, label: "(New)", fwType(emptyset, "new A()", "A")),
+    )))
 
-    #set text(size: 5pt)
+    #set text(size: 12pt)
+    $pi_("at") =$
+    #align(center, box(prooftree(
+      axiom(fwExtends("A", "Object")),
+      rule($"A" <: "Object"$)
+    )))
+
+    #set text(size: 12pt)
+    $pi_("pt") =$
+    #align(center, box(prooftree(
+      axiom(fwExtends("Pair", "Object")),
+      rule($"Pair" <: "Object"$)
+    )))
+
+    #set text(size: 12pt)
     $pi_1 =$
+    #set text(size: 7pt)
     #align(center, box(prooftree(
       axiom($2 = 2$),
       axiom(pairFields),
@@ -26,38 +48,31 @@
       rule(n: 2, label: "(New)", fwType(emptyset, "new B()", "B")),
       axiom(fwExtends("B", "Object")),
       rule($"B" <: "Object"$),
-      axiom($0 = 0$),
-      axiom(fwFields("A")),
-      rule(n: 2, label: "(New)", fwType(emptyset, "new A()", "A")),
-      axiom(fwExtends("A", "Object")),
-      rule($"A" <: "Object"$),
+      axiom($pi_("av")$),
+      axiom($pi_("at")$),
       rule(n: 6, label: "(New)", fwType(emptyset, "new Pair(new A(), new B())", "Object"))
     )))
 
-    #set text(size: 5pt)
+    #set text(size: 12pt)
     $pi_2 =$
+    #set text(size: 10pt)
     #align(center, box(prooftree(
       axiom($2 = 2$),
       axiom(pairFields),
       axiom($pi_1$),
-      axiom(fwExtends("Pair", "Object")),
-      rule($"Pair" <: "Object"$),
-      axiom($0 = 0$),
-      axiom(fwFields("A")),
-      rule(n: 2, label: "(New)", fwType(emptyset, "new A()", "A")),
-      axiom(fwExtends("A", "Object")),
-      rule($"A" <: "Object"$),
+      axiom($pi_("pt")$),
+      axiom($pi_("av")$),
+      axiom($pi_("at")$),
       rule(n: 6, label: "(New)", fwType(emptyset, "new Pair(new Pair(new A(), new B()), new A())", "Object")),
     )))
 
-    #set text(size: 5pt)
+    #set text(size: 6.7pt)
     #align(center, box(prooftree(
       axiom($pi_2$),
       axiom(pairFields),
       axiom(fwLookup("fst", "Pair")),
       rule(n: 3, label: "(Field)", fwType(emptyset, "new Pair(new Pair(new A(), new B()), new A()).fst", "Object")),
-      axiom(fwExtends("Pair", "Object")),
-      rule($"Pair" <: "Object"$),
+      axiom($pi_("pt")$),
       axiom($"Pair" eq.not "Object"$),
       rule(n: 3, label: "(DCast)", fwType(emptyset, "(Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)", "Pair")),
       axiom(pairFields),
@@ -98,19 +113,9 @@
       and #fwLookup("T", "snd").
       But
 
-      #set text(size: 4.3pt)
+      #set text(size: 10pt)
       #align(center, box(prooftree(
-        axiom($2 = 2$),
-        axiom(pairFields),
-        axiom($pi_1$),
-        axiom(fwExtends("Pair", "Object")),
-        rule($"Pair" <: "Object"$),
-        axiom($0 = 0$),
-        axiom(fwFields("A")),
-        rule(n: 2, label: "(New)", fwType(emptyset, "new A()", "A")),
-        axiom(fwExtends("A", "Object")),
-        rule($"A" <: "Object"$),
-        rule(n: 6, label: "(New)", fwType(emptyset, "new Pair(new Pair(new A(), new B()), new A())", "Object")),
+        axiom($pi_2$),
         axiom(pairFields),
         axiom(fwLookup("fst", "Pair")),
         rule(n: 3, label: "(Field)", fwType(emptyset, "new Pair(new Pair(new A(), new B()), new A()).fst", "Object")),
