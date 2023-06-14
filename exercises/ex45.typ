@@ -46,7 +46,8 @@
   )))
 
   #align(center, box(prooftree(
-    axiom(label: "(T-VAR)", $r: {ell: Nat} tack.r r.ell: Nat$),
+    axiom(label: "(T-VAR)", $r: {ell: Nat} tack.r r : {ell: Nat}$),
+    rule(label: "(T-SELECT)", $r: {ell: Nat} tack.r r.ell: Nat$),
     axiom(label: "(T-NAT)", $r: {ell: Nat} tack.r 2: Nat$),
     rule(n: 2, label: "(T-SUM)", $r: {ell: Nat} tack.r r.ell + 2: Nat$),
     rule(label: "(T-FUN)", $emptyset tack.r fn r:{ell: Nat}. r.ell + 2: {ell: Nat} -> Nat$),
