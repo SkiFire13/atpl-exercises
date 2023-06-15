@@ -17,7 +17,6 @@
   #set text(size: 10pt)
   #align(center, box(prooftree(
     axiom($emptyset tack.r M_f : angle.l ell_1 : Nat, ell_2 : Bool angle.r -> Bool$),
-    rule(label: "T-FUN", $emptyset tack.r M_f : angle.l ell_1 : Nat, ell_2 : Bool angle.r -> Bool$),
     axiom(label: "T-NAT", $emptyset tack.r 5 : Nat$),
     rule(label: "T-VARIANT", $emptyset tack.r angle.l ell_1 = 5 angle.r : angle.l ell_1 : Nat, ell_2 : Bool angle.r$),
     rule(n: 2, label: "T-APP", $emptyset tack.r M_f app angle.l ell_1 = 5 angle.r : Bool$),
