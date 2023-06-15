@@ -120,7 +120,7 @@
         rule(n: 3, label: "(Field)", fwType(emptyset, "new Pair(new Pair(new A(), new B()), new A()).fst", "Object")),
       ))))
 
-      that implies $T = "Object"$ but #fwFields("Object") witch is a contraddiction.
+      that implies $T = "Object"$ but #fwFields("Object") which is a contraddiction.
 
     It reduces to a value:
 

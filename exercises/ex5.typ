@@ -31,7 +31,7 @@
     Free variables and substitution needs to be updated to account for subtraction: \
     #align(center, $fv(M_1 - M_2) = fv(M_1) union fv(M_2)$)
     #align(center, $(M_1 - M_2) {x := N} = M_1 {x := N} - M_2 {x := N}$)
-  - We replace the (SUM LEFT) and (SUM RIGHT) rules with the following:
+  - We replace the (SUM LEFT) and (SUM RIGHT) rules with the following ones:
     #align(center)[
       #box(prooftree(
         axiom($N -> N'$),
@@ -40,7 +40,19 @@
       #h(2em)
       #box(prooftree(
         axiom($M -> M'$),
-        rule(label: "(SUB LEFT)", $M + n -> M' + n$),
+        rule(label: "(SUM LEFT)", $M + n -> M' + n$),
+      ))
+    ]
+    And add the new following rules:
+    #align(center)[
+      #box(prooftree(
+        axiom($N -> N'$),
+        rule(label: "(SUB RIGHT)", $M - N -> M - N'$),
+      ))
+      #h(2em)
+      #box(prooftree(
+        axiom($M -> M'$),
+        rule(label: "(SUB LEFT)", $M - n -> M' - n$),
       ))
     ]
   - We replace the (IF TRUE) and (IF FALSE) rules with:
