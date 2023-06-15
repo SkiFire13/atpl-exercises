@@ -16,7 +16,7 @@
     #align(center)[
       #box(prooftree(
         axiom(""),
-        rule(label: "(BETA)", $(fn x. 3) app (fn y. y) -> 3$),
+        rule(label: "(BETA NEW)", $(fn x. 3) app (fn y. y) -> 3$),
         rule(label: "(APP 1)", $(fn x. 3) app (fn y. y)) app ((fn z. mif z then 1 melse 0) app (mfalse)
         -> 3 app ((fn z. mif z then 1 melse 0) app (mfalse))$)
       ))
