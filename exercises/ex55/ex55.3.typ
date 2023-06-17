@@ -4,8 +4,8 @@
 #align(center)[
   #box(prooftree(
     axiom(""),
-    rule(label: "(BETA)", $fn z:Bool. (M_p app mif z then 3 melse 6) app mfalse] -> M_p app mif mfalse then 3 melse 6$),
-    rule(label: "(TRY)", $try [fn z:Bool. (M_p app mif z then 3 melse 6) app mfalse] catch fn y.y + y -> try (M_p app mif mfalse then 3 melse 6) catch fn y.y + y$)
+    rule(label: "(BETA)", $fn z:Bool. (M_p app mif z then 3 melse 6) app mfalse -> M_p app mif mfalse then 3 melse 6$),
+    rule(label: "(TRY)", $try (fn z:Bool. (M_p app mif z then 3 melse 6) app mfalse) catch fn y.y + y -> try (M_p app mif mfalse then 3 melse 6) catch fn y.y + y$)
   ))
   #v(1em)
   #box(prooftree(

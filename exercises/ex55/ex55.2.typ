@@ -18,13 +18,13 @@
     axiom(""),
     rule(label: "(MATH AX)", $even (5) -> mfalse$),
     rule(label: "(IF)", $mif even (5) then 5\/2 melse throw 5 -> mif mfalse then 5\/2 melse throw 5$),
-    rule(label: "(TRY)", $try (mif even (5) then 5\/2 melse throw 5) catch fn y.y + y -> try (mif mfalse then 5\/2 melse throw 5 catch fn y.y + y$)
+    rule(label: "(TRY)", $try (mif even (5) then 5\/2 melse throw 5) catch fn y.y + y -> try (mif mfalse then 5\/2 melse throw 5) catch fn y.y + y$)
   ))
   #v(1em)
   #box(prooftree(
     axiom(""),
     rule(label: "(IF FALSE)", $mif mfalse then 5\/2 melse throw 5 -> throw 5$),
-    rule(label: "(TRY)", $try (mif mfalse then 5\/2 melse throw 5 catch fn y.y + y -> try throw 5 catch fn y.y + y$)
+    rule(label: "(TRY)", $try (mif mfalse then 5\/2 melse throw 5) catch fn y.y + y -> try throw 5 catch fn y.y + y$)
   ))
   #v(1em)
   #box(prooftree(

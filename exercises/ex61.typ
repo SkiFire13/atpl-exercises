@@ -47,7 +47,7 @@
     #text(size: 11pt, align(center, box(prooftree(
       axiom(label: "(Reflex)", $Pair <: Pair$),
       rule(label: "(CastNew)", fwReduction("(Pair) new Pair(new A(), new B())", "new Pair(new A(), new B())")),
-      rule(label: "(Field)", fwReduction("((Pair) (new Pair(new A(), new B())).snd", "(new Pair(new A(), new B())).snd"))
+      rule(label: "(Field)", fwReduction("(Pair) (new Pair(new A(), new B())).snd", "(new Pair(new A(), new B())).snd"))
     ))))
 
     #align(center, box(prooftree(
