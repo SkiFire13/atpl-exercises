@@ -16,6 +16,7 @@
     rule(label: TRY, $try (M_p app 5) catch fn y.y + y -> try (mif even (5) then 5\/2 melse throw 5) catch fn y.y + y$)
   ))
   #vspace
+  #show: next(it => text(size: 8pt, it))
   #box(prooftree(
     axiom(""),
     rule(label: MATH-AX, $even (5) -> mfalse$),

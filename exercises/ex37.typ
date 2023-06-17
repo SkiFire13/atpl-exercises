@@ -5,7 +5,7 @@
   Prove that the term $(M_f app angle.l ell_1 = 5 angle.r)$ is well-typed with $Bool$ type.
 ]
 #solution[
-  #align(center, text(size: 6.5pt, box(prooftree(
+  #align(center, h(-4cm) + text(size: 6.5pt, box(prooftree(
     axiom(label: T-VAR, $x: angle.l ell_1 : Nat, ell_2 : Bool angle.r tack.r x : angle.l ell_1 : Nat, ell_2 : Bool angle.r$),
     axiom(label: T-TRUE, $x: angle.l ell_1 : Nat, ell_2 : Bool angle.r, x_1: Nat tack.r mtrue : Bool$),
     axiom(label: T-VAR, $x: angle.l ell_1 : Nat, ell_2 : Bool angle.r, x_2: Bool tack.r x_2 : Bool$),
@@ -13,7 +13,7 @@
     rule(label: T-FUN, $emptyset tack.r fn x: angle.l ell_1 : Nat, ell_2 : Bool angle.r. x match { case ell_1 = x_1 => mtrue, case ell_2 = x_2 => x_2 } : angle.l ell_1 : Nat, ell_2 : Bool angle.r -> Bool$),
   ))))
 
-  #align(center, text(size: 10pt, box(prooftree(
+  #align(center, text(size: 8pt, box(prooftree(
     axiom($emptyset tack.r M_f : angle.l ell_1 : Nat, ell_2 : Bool angle.r -> Bool$),
     axiom(label: T-INT, $emptyset tack.r 5 : Nat$),
     rule(label: T-VARIANT, $emptyset tack.r angle.l ell_1 = 5 angle.r : angle.l ell_1 : Nat, ell_2 : Bool angle.r$),

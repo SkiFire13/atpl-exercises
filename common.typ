@@ -1,13 +1,23 @@
 #import "prooftree/prooftree.typ": *
 
-#let vspace = v(1em)
+#let vspace = v(0.5em)
+#let font_size = 10pt
 
 #let typst_label = label
+
+#let next(f) = it => {
+  if(it.has("children")) {
+    f(it.children.first())
+    it.children.slice(1).join()
+  } else {
+    f(it)
+  }
+}
 
 #let exercise(label: none, content)  = [
   #box[
     #heading(
-      numbering: i => text(size: 12pt)[ Exercise #i. ],
+      numbering: i => text(size: font_size)[ Exercise #i. ],
       supplement: "",
       ""
     )

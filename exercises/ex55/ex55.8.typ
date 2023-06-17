@@ -4,6 +4,7 @@
 
 #set text(size: 6pt)
 #align(center)[
+  #show: next(it => h(-4cm) + it)
   #box(prooftree(
     axiom(""),
     rule(label: BETA, $M_p app 5-> mif even(5) then 5\/2 melse throw 5$),
@@ -12,6 +13,7 @@
     rule(label: TRY, $try (fn y.y + 2 app (try (M_p app 5) catch fn z.z+z)) catch fn z.print(z) -> try (fn y.y + 2 app (try (mif even(5) then 5\/2 melse throw 5) catch fn z.z+z)) catch fn z.print(z)$)
   ))
   #vspace
+  #show: next(it => h(-5cm) + it)
   #box(prooftree(
     axiom(""),
     rule(label: MATH-AX, $even(5) -> mfalse$),
@@ -21,6 +23,7 @@
     rule(label: TRY, $try (fn y.y + 2 app (try (mif even(5) then 5\/2 melse throw 5) catch fn z.z+z)) catch fn z.print(z) -> try (fn y.y + 2 app (try (mif mfalse then 5\/2 melse throw 5) catch fn z.z+z)) catch fn z.print(z)$)
   ))
   #vspace
+  #h(-0.5cm)
   #box(prooftree(
     axiom(""),
     rule(label: IF-FALSE, $mif mfalse then 5\/2 melse throw 5 -> throw 5$),
@@ -61,7 +64,7 @@
     rule(label: SUM, $10 + 2 -> 12$),
     rule(label: TRY, $try (10 + 2) catch fn z.print(z) -> try 12 catch fn z.print(z)$)
   ))
-  #vspace
+  #h(1.5cm)
   #box(prooftree(
     axiom(""),
     rule(label: TRY-VAL, $try 12 catch fn z.print(z) -> 12$)

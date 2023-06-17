@@ -40,7 +40,7 @@
     rule(n: 2, label: SUBSUMPTION, $emptyset tack.r {ell = 0, ell' = 1} : {ell: Nat}$),
   ))))
 
-  #align(center, text(size: 10pt, box(prooftree(
+  #align(center, text(size: 9pt, box(prooftree(
     axiom(label: T-VAR, $r: {ell: Nat} tack.r r : {ell: Nat}$),
     rule(label: T-SELECT, $r: {ell: Nat} tack.r r.ell: Nat$),
     axiom(label: T-INT, $r: {ell: Nat} tack.r 2: Nat$),

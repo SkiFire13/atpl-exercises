@@ -11,7 +11,7 @@
 ]
 #solution[
   - $M_1$:
-    #align(center, box(prooftree(
+    #align(center, h(-2cm) + box(prooftree(
       axiom($$),
       rule(label: SUM, $4 + 1 -> 5$),
       rule(label: EVAL-PAIR-1, $(4 + 1, mif mtrue then mfalse melse mfalse) -> (5, mif mtrue then mfalse melse mfalse)$),

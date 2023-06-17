@@ -15,7 +15,7 @@
   - $T = {ell_2: Nat, ell_3: Nat}$
   - $T = {ell_1: Nat, ell_2: Nat, ell_3: Nat}$
 
-  #align(center, text(size: 8.5pt, box(prooftree(
+  #align(center, text(size: 7.5pt, box(prooftree(
     axiom(label: T-INT, $emptyset tack.r 1 : Nat$),
     axiom(label: T-INT, $emptyset tack.r 2 : Nat$),
     axiom(label: T-INT, $emptyset tack.r 3 : Nat$),

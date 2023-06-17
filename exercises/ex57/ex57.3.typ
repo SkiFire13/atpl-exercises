@@ -2,6 +2,7 @@
 
 #set text(size: 8pt)
 #align(center)[
+  #show: next(it => text(size: 6pt, it))
   #box(prooftree(
     axiom(""),
     rule(label: T-INT, $emptyset, x : Bool tack.r 0 : T_exn$),
@@ -38,7 +39,7 @@
     axiom(""),
     rule(label: TRY-HANDLE, $try throw 0 catch fn y.y -> (fn y.y) app 0$)
   ))
-  #vspace
+  #h(1cm)
   #box(prooftree(
     axiom(""),
     rule(label: BETA, $(fn y.y) app 0 -> 0$)

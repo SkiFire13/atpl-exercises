@@ -2,6 +2,7 @@
 
 #set text(size: 9pt)
 #align(center)[
+  #show: next(it => text(size: 8pt, it))
   #box(prooftree(
     axiom(""),
     rule(label: RAISE-APP-2, $M_p app throw 2 -> throw 2$),

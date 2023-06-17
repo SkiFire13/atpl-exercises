@@ -6,7 +6,7 @@
 ]
 #solution[
   The required context is $Gamma = emptyset, z: Bool -> Bool -> Bool, x: Bool, y: Bool$:
-  #align(center, text(size: 11pt, prooftree(
+  #align(center, text(size: 9pt, prooftree(
     axiom(""),
     rule(label: T-VAR, $Gamma tack.r z: Bool -> Bool -> Bool$),
     axiom(""),

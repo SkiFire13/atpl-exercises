@@ -9,7 +9,7 @@
   - $fn f: T_1. fn g: T_2. mif (f (g mtrue)) then f (fn x: T_3 .mtrue) melse f (fn x: T_4. x)$
 ]
 #solution[
-  #align(center, text(size: 10pt, box(prooftree(
+  #align(center, text(size: 9pt, box(prooftree(
     axiom(label: T-VAR, $x : Bool, y : Bool tack.r y : Bool$),
     axiom(label: T-VAR, $x : Bool, y : Bool tack.r x : Bool$),
     axiom(label: T-TRUE, $x : Bool, y : Bool tack.r mtrue : Bool$),

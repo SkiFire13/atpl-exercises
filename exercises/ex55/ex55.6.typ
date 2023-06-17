@@ -10,6 +10,7 @@
     rule(label: TRY, $try (N_p app 3) catch fn y.y -> try (try (mif even(3) then 3\/2 melse throw 3) catch fn z.0) catch fn y.y$)
   ))
   #vspace
+  #show: next(it => text(size: 6.5pt, it))
   #box(prooftree(
     axiom(""),
     rule(label: MATH-AX, $even(3) -> mfalse$),
@@ -36,7 +37,7 @@
     rule(label: BETA, $(fn z.0) app 3 -> 0$),
     rule(label: TRY, $try ((fn z.0) app 3) catch fn y.y -> try 0 catch fn y.y$)
   ))
-  #vspace
+  #h(1.5cm)
   #box(prooftree(
     axiom(""),
     rule(label: TRY-VAL, $try 0 catch fn y.y -> 0$)

@@ -15,26 +15,30 @@
 
     It is well-typed:
 
+  #columns(2)[
     $pi_("av") =$
     #align(center, box(prooftree(
       axiom($0 = 0$),
       axiom(fwFields("A")),
       rule(n: 2, label: NEW, fwType(emptyset, "new A()", "A")),
     )))
-
+    #colbreak()
     $pi_("at") =$
     #align(center, box(prooftree(
       axiom(fwExtends("A", "Object")),
       rule(label: S-CLASS, $"A" <: "Object"$)
     )))
+  ]
 
     $pi_("pt") =$
+    #show: next(it => text(size: 9pt, it))
     #align(center, box(prooftree(
       axiom(fwExtends("Pair", "Object")),
       rule(label: S-CLASS, $"Pair" <: "Object"$)
     )))
 
     $pi_("bv") =$
+    #show: next(it => text(size: 9pt, it))
     #align(center, box(prooftree(
       axiom(fwExtends("B", "Object")),
       rule(label: S-CLASS, $"B" <: "Object"$),
@@ -42,6 +46,7 @@
 
     $pi_1 =$
     #text(size: 8pt, align(center, box(prooftree(
+      spacing: (horizontal: 0em),
       axiom($2 = 2$),
       axiom(pairFields),
       axiom($0 = 0$),
@@ -55,6 +60,7 @@
 
     $pi_2 =$
     #text(size: 10pt, align(center, box(prooftree(
+      spacing: (horizontal: 0em),
       axiom($2 = 2$),
       axiom(pairFields),
       axiom($pi_1$),
@@ -65,7 +71,8 @@
     ))))
 
     $pi_("f ") =$
-    #text(size: 10pt, align(center, box(prooftree(
+    #text(size: 9pt, align(center, h(-0.5cm) + box(prooftree(
+      spacing: (horizontal: 0em),
       axiom($pi_2$),
       axiom(pairFields),
       axiom(fwLookup("Pair", "fst")),
@@ -77,7 +84,8 @@
 
     #vspace
 
-    #text(size: 11pt, align(center, box(prooftree(
+    #text(size: 9.8pt, align(center, h(-1cm) + box(prooftree(
+      spacing: (horizontal: 0em),
       axiom($pi_("f ")$),
       axiom(pairFields),
       axiom(fwLookup("Pair", "snd")),
@@ -86,7 +94,7 @@
 
     It reduces to a value:
 
-    #text(size: 8pt, align(center, box(prooftree(
+    #text(size: 7.5pt, align(center, h(-3cm) + box(prooftree(
       axiom(pairFields),
       axiom(fwLookup("Pair", "fst")),
       rule(n: 2, label: PROJ-NEW, fwReduction("new Pair(new Pair(new A(), new B()), new A()).fst", "new Pair(new A(), new B())")),
@@ -94,7 +102,7 @@
       rule(label: FIELD, fwReduction("((Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)).snd", "((Pair) (new Pair(new A(), new B()))).snd"))
     ))))
 
-    #text(size: 11pt, align(center, box(prooftree(
+    #text(size: 9pt, align(center, box(prooftree(
       axiom(label: REFLEX, $Pair <: Pair$),
       rule(label: CAST-NEW, fwReduction("(Pair) new Pair(new A(), new B())", "new Pair(new A(), new B())")),
       rule(label: FIELD, fwReduction("(Pair) (new Pair(new A(), new B())).snd", "(new Pair(new A(), new B())).snd"))
@@ -124,7 +132,7 @@
 
     It reduces to a value:
 
-    #text(size: 8pt, align(center, box(prooftree(
+    #text(size: 8pt, align(center, h(-2cm) + box(prooftree(
       axiom(pairFields),
       axiom(fwLookup("Pair", "fst")),
       rule(n: 2, label: PROJ-NEW, fwReduction("new Pair(new Pair(new A(), new B()), new A()).fst", "new Pair(new A(), new B())")),

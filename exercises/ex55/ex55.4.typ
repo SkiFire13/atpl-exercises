@@ -11,6 +11,7 @@
     rule(label: TRY, $try (fn y.y + 2 app (M_p app 5)) catch fn z.print (z) -> try (fn y.y + 2 app (mif even (5) then 5\/2 melse throw 5)) catch fn z.print (z)$)
   ))
   #vspace
+  #show: next(it => h(-70pt) + text(size: 6.5pt, it))
   #box(prooftree(
     axiom(""),
     rule(label: MATH-AX, $even (5) -> mfalse$),

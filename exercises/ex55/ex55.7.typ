@@ -2,7 +2,7 @@
 
 #let MATH-AX = smallcaps("(Math-Ax)")
 
-#set text(size: 7pt)
+#set text(size: 6.5pt)
 #align(center)[
   #box(prooftree(
     axiom(""),
@@ -43,9 +43,7 @@
     rule(label: BETA, $(fn z.print(z)) app 5 -> print(5)$),
     rule(label: TRY, $try (fn z.print(z)) app 5 catch fn y.y + y -> try print(5) catch fn y.y + y$)
   ))
-  #vspace
-  #align(left)[Since it is not defined, "print(5)" is considered as a value:]
-
+  #h(0.5cm)
   #box(prooftree(
     axiom(""),
     rule(label: TRY-VAL, $try print(5) catch fn y.y + y -> print(5)$)

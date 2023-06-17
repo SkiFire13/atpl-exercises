@@ -5,8 +5,8 @@
   Write a program that contains the overriding of a method. Show its evaluation and highlight the dynamic binding in the method invocation.
 ]
 
-#solution[
-  ```java
+#solution[ \
+  #box(```java
   class A extends Object {
     A() {
       super();
@@ -16,7 +16,9 @@
       return new A();
     }
   }
-
+  ```)
+  #h(3cm)
+  #box(```java
   class B extends A {
     B() {
       super();
@@ -26,10 +28,9 @@
       return new B();
     }
   }
-  ```
+  ```)
 
-  ```java ((A) new B()).m()```
-
+  Consider ```java ((A) new B()).m()```:
   #align(center, box(prooftree(
     axiom(fwExtends("B", "A")),
     rule(label: S-CLASS, $B <: A$),

@@ -4,6 +4,7 @@
 
 #set text(size: 9pt)
 #align(center)[
+  #show: next(it => text(size: 7.5pt, it))
   #box(prooftree(
     axiom(""),
     rule(label: BETA, $fn z:Bool. (M_p app mif z then 3 melse 6) app mfalse -> M_p app mif mfalse then 3 melse 6$),
@@ -23,6 +24,7 @@
     rule(label: TRY, $try (M_p app 6) catch fn y.y + y -> try (mif even (6) then 6\/2 melse throw 6) catch fn y.y + y$)
   ))
   #vspace
+  #show: next(it => h(-3cm) + text(size: 8pt, it))
   #box(prooftree(
     axiom(""),
     rule(label: MATH-AX, $even (6) -> mtrue$),

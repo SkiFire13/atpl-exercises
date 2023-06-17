@@ -8,7 +8,7 @@
   Consider $M = (fn x: {}. x) app { ell = 1}$
 
   It is well typed in the language with subtyping
-  #text(size: 10pt, align(center, box(prooftree(
+  #text(size: 9pt, align(center, box(prooftree(
     axiom(label: T-VAR, $x : {} tack.r x : {}$),
     rule(label: T-FUN, $emptyset tack.r fn x: {}. x : {} -> {}$),
     axiom(label: T-INT, $emptyset tack.r 1 : Nat$),
