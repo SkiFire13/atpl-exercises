@@ -42,7 +42,7 @@
   #box(prooftree(
     axiom(""),
     rule(label: "(BETA)", $(fn z.z+z) app 5 -> 5 + 5$),
-    rule(label: "(APP 2)", $2 app ((fn z.z+z) app 5 -> 2 app (5 + 5)$),
+    rule(label: "(APP 2)", $2 app ((fn z.z+z) app 5) -> 2 app (5 + 5)$),
     rule(label: "(SUM RIGHT)", $fn y.y + 2 app ((fn z.z+z) app 5) -> fn y.y + 2 app (5 + 5)$),
     rule(label: "(TRY)", $try (fn y.y + 2 app ((fn z.z+z) app 5)) catch fn z.print(z) -> try (fn y.y + 2 app (5 + 5)) catch fn z.print(z)$)
   ))
