@@ -4,7 +4,7 @@
 #align(center)[
   #box(prooftree(
     axiom(""),
-    rule(label: "(BETA)", $fn x.x app throw 1 -> throw 1$),
+    rule(label: "(RAISE APP 2)", $fn x.x app throw 1 -> throw 1$),
     rule(label: "(APP 1)", $(fn x.x app throw 1) app (try (M_p app 5) catch fn z.z+z) -> (throw 1) app (try (M_p app 5) catch fn z.z+z)$),
     rule(label: "(TRY)", $try (fn x.x app throw 1) app (try (M_p app 5) catch fn z.z+z) catch fn z.print(z) -> try (throw 1) app (try (M_p app 5) catch fn z.z+z) catch fn z.print(z)$)
   ))
