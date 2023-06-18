@@ -21,7 +21,7 @@
     - (RAISE SUM 2): $v_1 + throw v_2 -> throw v_2$, by inversion lemma $Gamma tack.r throw v_2 : Nat$, by inversion lemma again $Gamma tack.r v_2 : T_exn$ and so by (T-RAISE) $Gamma tack.r throw v_2 : T$
 
   - *Progress Theorem*: Let $M$ be a closed and well-typed term, i.e. $emptyset tack.r M : T$ then either $M$ is a value, or $exists M'.M -> M'$ or $exists v. M = throw v$. We add the following cases:
-    - *DISCLAIMER: ALL PREVIOUSLY DEFINED CASES SHOULD ALSO BE UPDATED IN ORDER TO CONSIDER THE INDUCTIVE CASE $M = throw v$*
+    - The cases for (T-SUM), (T-IF), (T-APP) need to be updated to handle the case $M = throw v$ when applying the inductive hypothesis, resulting in the use of a (RAISE X) rule.
     - (T-RAISE): $M = throw M_1$ and $emptyset tack.r throw M_1 : T$ has a derivation tree of height k+1 while $emptyset tack.r M_1 : T_exn$ has a derivation tree of height k. By inductive hypothesis we distinguish three cases:
       - $M_1 = v$ is a value, then $M = throw v$ satisfies our thesis.
       - $M_1 -> M_1'$, then by (RAISE 1) $M = throw M_1 -> M' = throw M_1'$
