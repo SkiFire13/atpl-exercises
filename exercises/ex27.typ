@@ -33,8 +33,8 @@
     axiom(label: "(T-VAR)", $f : T -> T, x : T tack.r x : T$),
     rule(n: 2, label: "(T-APP)", $f : T -> T, x : T tack.r f app x : T$),
     rule(n: 3, label: "(T-IF)", $f : T -> T, x : T tack.r mif mtrue then x melse f app x : T$),
-    rule(n: 2, label: "(T-APP)", $f : T -> T, x : T tack.r f (mif mtrue then x melse f app x) : (T -> T) -> T -> T$),
-    rule(label: "(T-FUN)", $f: T -> T tack.r fn x: T. f (mif mtrue then x melse f app x) : (T -> T) -> T -> T$),
+    rule(n: 2, label: "(T-APP)", $f : T -> T, x : T tack.r f (mif mtrue then x melse f app x) : T$),
+    rule(label: "(T-FUN)", $f: T -> T tack.r fn x: T. f (mif mtrue then x melse f app x) : T -> T$),
     rule(label: "(T-FUN)", $emptyset tack.r fn f: T -> T. fn x: T. f (mif mtrue then x melse f app x) : (T -> T) -> T -> T$),
   )))
 
