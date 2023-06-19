@@ -12,7 +12,7 @@
           axiom(""),
           rule(label: "(T-VAR)", $Gamma tack.r z: Bool -> Bool -> Bool$),
           axiom(""),
-          rule(label: "(T-VAR)", $Gamma tack.r y: Bool$),
+          rule(label: "(T-VAR)", $Gamma tack.r x: Bool$),
         rule(n: 2, label: "(T-APP)", $Gamma tack.r z app x: Bool -> Bool$),
 
         axiom(""),
