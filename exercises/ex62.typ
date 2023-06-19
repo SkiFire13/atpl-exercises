@@ -17,7 +17,7 @@
       }
     }
 
-    class B extends Object {
+    class B extends A {
       B() {
         super();
       }
