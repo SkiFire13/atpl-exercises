@@ -50,7 +50,7 @@
       axiom($pi_("bv")$),
       axiom($pi_("av")$),
       axiom($pi_("at")$),
-      rule(n: 6, label: "(New)", fwType(emptyset, "new Pair(new A(), new B())", "Object"))
+      rule(n: 6, label: "(New)", fwType(emptyset, "new Pair(new A(), new B())", "Pair"))
     ))))
 
     $pi_2 =$
@@ -61,7 +61,7 @@
       axiom($pi_("pt")$),
       axiom($pi_("av")$),
       axiom($pi_("at")$),
-      rule(n: 6, label: "(New)", fwType(emptyset, "new Pair(new Pair(new A(), new B()), new A())", "Object")),
+      rule(n: 6, label: "(New)", fwType(emptyset, "new Pair(new Pair(new A(), new B()), new A())", "Pair")),
     ))))
 
     $pi_("f ") =$
