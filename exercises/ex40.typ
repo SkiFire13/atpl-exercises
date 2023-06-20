@@ -17,7 +17,7 @@
 #solution[
 
   - *Inversion of typing*: We add the following case:
-    - if $Gamma tack.r M match { case l_i = x_i arrow.r.double M_i #h(1pt) ^ (i in I) } : T$ then $exists T_1, ... T_j$ such that $Gamma tack.r M' : angle.l l_i : T_i #h(1pt) ^ (i in J) angle.r$, $forall i in J quad Gamma, x_i : T_i tack.r M_i : T$.
+    - if $Gamma tack.r M match { case l_i = x_i arrow.r.double M_i #h(1pt) ^ (i in I) } : T$ then $exists T_1, ... T_j$ such that $Gamma tack.r M : angle.l l_i : T_i #h(1pt) ^ (i in J) angle.r$, $forall i in J quad Gamma, x_i : T_i tack.r M_i : T$.
 
   - *Canonical forms*: No new canonical form is needed.
   - *Progress theorem*: We add the following case:
