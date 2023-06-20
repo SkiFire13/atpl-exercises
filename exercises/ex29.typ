@@ -25,7 +25,7 @@
     ))
     #h(1fr)
     #box(prooftree(
-      axiom("M_2 ~> M_2'"),
+      axiom($M_2 ~> M_2'$),
       rule(label: "(EVAL-PAIR-2)", $(v_1, M_2) ~> (v_1, M_2')$),
     ))
     #h(1fr)
