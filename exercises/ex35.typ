@@ -6,7 +6,7 @@
 ]
 #solution[
   - *Inversion of typing*: we add the following cases:
-    - if $Gamma tack.r M.ell_i : T_j$ is derivable then $exists n, T_1..T_n. forall i.$ $Gamma tack.r M : { ell_i : T_i #h(1pt) ^ (i in 1..n) }$ derivable.
+    - if $Gamma tack.r M.ell_j : T_j$ is derivable then $exists n, T_1..T_n. forall i.$ $Gamma tack.r M : { ell_i : T_i #h(1pt) ^ (i in 1..n) }$ derivable.
     - if $Gamma tack.r { ell_i = M_i #h(1pt) ^ (i in 1..n) } : T$ is derivable then $exists T_1..T_n.$ $T = {ell_i : T_i #h(1pt) ^ (i in 1..n)}$ and $forall i.$ $Gamma tack.r M_i : T_i$ derivable.
   - *Canonical forms*: we add the following case:
     - if $v$ is a value and $Gamma tack.r v : { ell_i : T_i #h(1pt) ^ (i in 1..n) }$ is derivable then $v = { ell_i = v_i #h(1pt) ^ (i in 1..n) }$. Proof is immediate.
