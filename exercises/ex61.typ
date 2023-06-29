@@ -57,19 +57,19 @@
     )))
 
   - ```java (B) ((A)new C())```
-    #align(center, box(prooftree(
+    #text(size: 10pt, align(center, box(prooftree(
       axiom(fwExtends("C", "B")),
-      rule($C <: B$),
+      rule(label: "(S-CLASS)", $C <: B$),
       axiom(fwExtends("B", "A")),
-      rule($B <: A$),
+      rule(label: "(S-CLASS)", $B <: A$),
       rule(n: 2, $C <: A$),
       rule(label: "(CastNew)", fwReduction("(A) new C()", "new C()")),
       rule(label: "(Cast)", fwReduction("(B) ((A) new C())", "(B) (new C())"))
-    )))
+    ))))
 
     #align(center, box(prooftree(
       axiom(fwExtends("C", "B")),
-      rule($C <: B$),
+      rule(label: "(S-CLASS)", $C <: B$),
       rule(label: "(CastNew)", fwReduction("(B) (new C())", "new C()"))
     )))
 ]

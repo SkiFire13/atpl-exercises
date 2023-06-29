@@ -33,7 +33,7 @@
 
     #align(center, box(prooftree(
       axiom(fwExtends("B", "A")),
-      rule($B <: A$),
+      rule(label: "(S-CLASS)", $B <: A$),
       rule(label: "(CastNew)", fwReduction("(A) new B()", "new B()")),
       rule(label: "(InvkRecv)", fwReduction("((A) new B()).m()", "(new B()).m()"))
     )))

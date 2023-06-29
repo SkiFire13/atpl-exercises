@@ -25,19 +25,19 @@
     $pi_("at") =$
     #align(center, box(prooftree(
       axiom(fwExtends("A", "Object")),
-      rule($"A" <: "Object"$)
+      rule(label: "(S-CLASS)", $"A" <: "Object"$)
     )))
 
     $pi_("pt") =$
     #align(center, box(prooftree(
       axiom(fwExtends("Pair", "Object")),
-      rule($"Pair" <: "Object"$)
+      rule(label: "(S-CLASS)", $"Pair" <: "Object"$)
     )))
 
     $pi_("bv") =$
     #align(center, box(prooftree(
       axiom(fwExtends("B", "Object")),
-      rule($"B" <: "Object"$),
+      rule(label: "(S-CLASS)", $"B" <: "Object"$),
     )))
 
     $pi_1 =$
