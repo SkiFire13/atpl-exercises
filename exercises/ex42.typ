@@ -18,12 +18,12 @@
 
     #align(center, box(prooftree(
       axiom(""),
-      rule(label: "MATCH DEFAULT CASE", label-right: $j in 1..n$, $angle.l l_j = v_j angle.r match { case l_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f } arrow.r M_j {x_j := v_j}$)
+      rule(label: (left: "MATCH DEFAULT CASE", right: $j in 1..n$), $angle.l l_j = v_j angle.r match { case l_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f } arrow.r M_j {x_j := v_j}$)
     )))
 
     #align(center, box(prooftree(
       axiom(""),
-      rule(label: "MATCH DEFAULT", label-right: $j in.not 1..n$, $angle.l l_j = v_j angle.r match { case l_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f } arrow.r M_f$)
+      rule(label: (left: "MATCH DEFAULT", right: $j in.not 1..n$), $angle.l l_j = v_j angle.r match { case l_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f } arrow.r M_f$)
     )))
   ]
 
