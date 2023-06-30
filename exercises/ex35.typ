@@ -11,10 +11,10 @@
   - *Canonical forms*: we add the following case:
     - if $v$ is a value and $Gamma tack.r v : { ell_i : T_i #h(1pt) ^ (i in 1..n) }$ is derivable then $v = { ell_i = v_i #h(1pt) ^ (i in 1..n) }$. Proof is immediate.
   - *Progress theorem*: we add the following cases:
-    - (T-RECORD): then $M = { ell_i = M_i #h(1pt) ^ (i in 1..n)}$ and $forall i. Gamma tack.r M_i : T_i$ with height at most $k$. By inductive hypothesis $M_i = v_i$ or $M_i -> M_i'$. We distinguish two cases:
+    - (T-RECORD): then $M = { ell_i = M_i #h(1pt) ^ (i in 1..n)}$ and $forall i. emptyset tack.r M_i : T_i$ with height at most $k$. By inductive hypothesis $M_i = v_i$ or $M_i -> M_i'$. We distinguish two cases:
       - $exists i. M_i -> M_i'$, let $i$ be the smallest index that satisfies this condition, thus $forall j < i. M_j = v_j$. Thus (EVAL-RECORD) applies and $M -> M'$
       - $forall i. M_i = v_i$, then $M$ is also a value.
-    - (T-SELECT): then $M = M'.ell_j$ and $Gamma tack.r M' : {ell_i : T_i #h(1pt) ^ (i in 1..n)}$ with height $k$ and $j in 1..n$. By inductive hypothesis we distinguish two cases:
+    - (T-SELECT): then $M = M'.ell_j$ and $emptyset tack.r M' : {ell_i : T_i #h(1pt) ^ (i in 1..n)}$ with height $k$ and $j in 1..n$. By inductive hypothesis we distinguish two cases:
       - $M' -> M''$, then by (EVAL-SELECT) $M -> M''.ell_j$
       - $M'$ is a value. Then by canonical form theorem $M' = { ell_i = v_i #h(1pt) ^ (i in 1..n) }$, thus (SELECT) applies and $M -> v_j$
   - *Subject reduction*: we add the following cases:

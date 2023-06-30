@@ -20,8 +20,8 @@
     - if $Gamma tack.r M match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in I) } : T$ then $exists J subset.eq I. exists T_1, ... T_j$ such that $Gamma tack.r M : angle.l ell_i : T_i #h(1pt) ^ (i in J) angle.r$, $forall i in J. Gamma, x_i : T_i tack.r M_i : T$.
   - *Canonical forms*: No new canonical form is needed.
   - *Progress theorem*: We add the following case:
-    - (TYPE MATCH GEN 2): then $M = M' match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in I)}$ and $exists J subset.eq I. exists T_1, ..., T_j$ such that $Gamma tack.r M' : angle.l ell_i : T_i #h(1pt) ^ (i in J) angle.r$, $forall i in J. Gamma, x_i : T_i tack.r M_i : T$ all with height at most $k$.
-      By inductive hypothesis on $Gamma tack.r M' : angle.l ell_i : T_i #h(1pt) ^ (i in J) angle.r$ we can distinguish the following cases:
+    - (TYPE MATCH GEN 2): then $M = M' match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in I)}$ and $exists J subset.eq I. exists T_1, ..., T_j$ such that $emptyset tack.r M' : angle.l ell_i : T_i #h(1pt) ^ (i in J) angle.r$, $forall i in J. emptyset, x_i : T_i tack.r M_i : T$ all with height at most $k$.
+      By inductive hypothesis on $emptyset tack.r M' : angle.l ell_i : T_i #h(1pt) ^ (i in J) angle.r$ we can distinguish the following cases:
       - $M' arrow.r M''$ then by (RED MATCH) $M arrow M'' match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in J) }$
       - $M' = v$ then by canonical forms theorem $v = angle.l ell_j = v_j angle.r$ and we can apply the rule (MATCH) $M arrow M_j{x_j := v_j}$
   - *Permutation lemma*: Same as before;

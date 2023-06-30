@@ -11,10 +11,10 @@
   - *Canonical forms*: we add the following cases:
     - if $v$ is a value and $Gamma tack.r v : angle.l ell_i : T_i #h(1pt) ^ (i in 1..n) angle.r$ then $v = angle.l ell_j = v_j angle.r$
   - *Progress theorem*: we add the following cases:
-    - (T-VARIANT): then $M = angle.l ell_j : M_j angle.r$ and $Gamma tack.r M_j : T_j$ derivable of height $k$. By inductive hypothesis we distinguish two cases:
+    - (T-VARIANT): then $M = angle.l ell_j : M_j angle.r$ and $emptyset tack.r M_j : T_j$ derivable of height $k$. By inductive hypothesis we distinguish two cases:
       - $M_j = v_j$ is a value, then $M = angle.l ell_j = v_j angle.r$ is also a value;
       - $M_j -> M_j'$, then by (VARIANT) $M -> angle.l ell_j = M_j' angle.r$
-    - (T-MATCH): then $M = M' match { case ell_i = x_i => M_i #h(1pt) ^ (i in 1..n) }$ and $exists T_1..T_n.$ $Gamma tack.r M' : angle.l ell_i : T_i #h(1pt) ^ (i in 1..n) angle.r$, $forall i. Gamma, x_i: T_i tack.r M_i : T$ derivable with height at most $k$. By inductive hypothesis on $M'$ we distinguish two cases:
+    - (T-MATCH): then $M = M' match { case ell_i = x_i => M_i #h(1pt) ^ (i in 1..n) }$ and $exists T_1..T_n.$ $emptyset tack.r M' : angle.l ell_i : T_i #h(1pt) ^ (i in 1..n) angle.r$, $forall i. emptyset, x_i: T_i tack.r M_i : T$ derivable with height at most $k$. By inductive hypothesis on $M'$ we distinguish two cases:
       - $M' -> M''$, then by (RED-MATCH) $M -> M'' match { case ell_i = x_i => M_i #h(1pt) ^ (i in 1..n) }$
       - $M' = v$, then by canonical forms theorem $v = angle.l ell_j = v_j angle.r$ and by (MATCH) $M -> M_j {x_j := v_j}$
   - *Substitution lemma*: we add the following cases:
