@@ -50,10 +50,9 @@
     - if $Gamma tack.r M match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f } : T$ then $exists T_1, ..., T_m$ such that $Gamma tack.r M : angle.l ell_i : T_i #h(1pt) ^ (i in 1..m) angle.r$, $forall i in 1..n quad Gamma, x_i : T_i tack.r M_i : T$ and $Gamma tack.r M_f : T$
   - *Canonical forms*: No new canonical form is needed.
   - *Progress theorem*: We add the following case:
-    - (T-MATCH DEFAULT): then $M = M' match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f }$ and by inversion lemma $exists T_1, ..., T_m$ such that $emptyset tack.r M' : angle.l ell_i : T_i #h(1pt) ^ (i in 1..m) angle.r$, $forall i in 1..n quad emptyset, x_i : T_i tack.r M_i : T$ and $emptyset tack.r M_f : T$ all with height at most $k$.
-    By inductive hypothesis on $emptyset tack.r M' : angle.l ell_i : T_i #h(1pt) ^ (i in 1..m) angle.r$ we can distinguish the following cases:
-    - $M' arrow.r M''$ then by (RED MATCH DEFAULT) $M arrow M'' match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f }$
-    - $M' = v$ then by canonical forms theorem $v = angle.l ell_j = v_j angle.r$
+    - (T-MATCH DEFAULT): then $M = M' match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f }$ and by inversion lemma $exists T_1, ..., T_m$ such that $emptyset tack.r M' : angle.l ell_i : T_i #h(1pt) ^ (i in 1..m) angle.r$, $forall i in 1..n quad emptyset, x_i : T_i tack.r M_i : T$ and $emptyset tack.r M_f : T$ all with height at most $k$. By inductive hypothesis on $emptyset tack.r M' : angle.l ell_i : T_i #h(1pt) ^ (i in 1..m) angle.r$ we can distinguish the following cases:
+      - $M' arrow.r M''$ then by (RED MATCH DEFAULT) $M arrow M'' match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f }$
+      - $M' = v$ then by canonical forms theorem $v = angle.l ell_j = v_j angle.r$
         - if $j in 1..n$ then by (MATCH DEFAULT CASE) $M arrow M_j{x := v_j}$
         - if $j in.not 1..n$ by (MATCH DEFAULT) $M arrow M_f$
   - *Substitution lemma*: we add the following case:
