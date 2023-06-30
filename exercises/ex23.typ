@@ -2,7 +2,7 @@
 
 // Note 11 ex 11
 #exercise[
-  If instead of the rule (T-APP) the following rule were defined, would the safety theorem still be true?
+  If instead of the rule (T-APP) the following rule was defined, would the safety theorem still be true?
   #align(center, box(prooftree(
     axiom($Gamma tack.r M : T -> T$),
     axiom($Gamma tack.r N : T$),
@@ -11,7 +11,7 @@
 ]
 #solution[
   Yes, safety theorem still be true. Consider 
-  $tack.r_"APP'"$ as a logical implication that uses all the standard rules defined, in which (APP) is replaced with (APP').
+  $tack.r_"APP'"$ as a logical implication that uses all the standard rules defined, in which (APP') is replaced with (APP).
   In such a way it only needs to show by induction on the number $n$ of (APP') rules used in any derivation tree that the entire proof of a theorem would still hold:
   - Base case $n = 0$ : if $Gamma tack.r_"APP'" M : T$ holds without any application of (APP') in its derivation tree, then this derivation tree is the same of $Gamma tack.r M : T$
   
