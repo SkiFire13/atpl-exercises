@@ -7,7 +7,7 @@
 #solution[
   We prove this by structural induction on the height of the judgement $Gamma tack.r M: T$:
   - Base cases:
-    - (T-VAR): then $M = x$ and $x: T in Gamma$, thus $fv(v) = {x} subset.eq Dom(Gamma)$;
+    - (T-VAR): then $M = x$ and $x: T in Gamma$, thus $fv(x) = {x} subset.eq Dom(Gamma)$;
     - (T-NAT): then $M = n$ and $fv(n) = emptyset subset.eq Dom(Gamma)$;
     - (T-TRUE): then $M = mtrue$ and $fv(mtrue) = emptyset subset.eq Dom(Gamma)$;
     - (T-FALSE): then $M = mfalse$ and $fv(mfalse) = emptyset subset.eq Dom(Gamma)$.
