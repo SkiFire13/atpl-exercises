@@ -105,8 +105,8 @@
 #let print = "print"
 #let exn = "exn"
 
-#let ell = text("\u{1D4C1}", font: "cmsy10")
+#let ell = text("\u{1D4C1}", font: ())
 
-#let emptyset = text(font: "sans-serif")[ \u{2205} ]
+#let emptyset = text("\u{2205}", font: ())
 
 #let tack2r = "\u{22A9}"
