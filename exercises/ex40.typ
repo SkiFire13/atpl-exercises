@@ -24,7 +24,7 @@
     - (TYPE MATCH GEN 2): then $M = M' match { case l_i = x_i arrow.r.double M_i #h(1pt) ^ (i in I)}$ and $exists J subset.eq I. exists T_1, ..., T_j$ such that $Gamma tack.r M' : angle.l l_i : T_i #h(1pt) ^ (i in J) angle.r$, $forall i in J. Gamma, x_i : T_i tack.r M_i : T$ all with height at most $k$.
       By inductive hypothesis on $Gamma tack.r M' : angle.l l_i : T_i #h(1pt) ^ (i in J) angle.r$ we can distinguish the following cases:
       - $M' arrow.r M''$ then by (RED MATCH) $M arrow M'' match { case l_i = x_i arrow.r.double M_i #h(1pt) ^ (i in J) }$
-      - $M' = v$ then by canonical forms theorem $v = angle.l l_j = v_j angle.r$ and we can apply the rule (MATCH) $M' arrow M_j{x_j := v_j}$
+      - $M' = v$ then by canonical forms theorem $v = angle.l l_j = v_j angle.r$ and we can apply the rule (MATCH) $M arrow M_j{x_j := v_j}$
   - *Permutation lemma*: Same as before;
   - *Substitution lemma*: We add the following case:
     - (TYPE MATCH GEN 2) then $M = M' match { case l_i = x_i arrow.r.double M_i #h(1pt) ^ (i in I)}$. By $alpha$-equivalence we assume $x_i != x$. By hypothesis $exists J subset.eq I. exists T_1, ..., T_j$ such that $Gamma, x: S tack.r M' : angle.l l_i : T_i #h(1pt) ^ (i in J) angle.r$, $forall i in J. Gamma, x: S, x_i : T_i tack.r M_i : T$ all with height at most $k$. By permutation lemma $forall i in J. Gamma, x_i: T_i, x: S tack.r M_i: T$ with the same height of at most $k$. We can apply the inductive hypothesis to get $Gamma tack.r M' {x := N} : angle.l ell_i: T_i #h(1pt) ^ (i in J) angle.r$ and $forall i in J. Gamma, x_i: T_i tack.r M_i {x := N} : T$. Then we can apply the rule (TYPE MATCH GEN 2) to obtain $Gamma tack.r M'{x := N} match { case l_i = x_i arrow.r.double M_i{x := N} #h(1pt) ^ (i in I)} : T$
