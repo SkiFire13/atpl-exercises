@@ -21,7 +21,6 @@
     - (RAISE SUM 2): $v_1 + throw v_2 -> throw v_2$, by inversion lemma $Gamma tack.r throw v_2 : Nat$, by inversion lemma again $Gamma tack.r v_2 : T_exn$ and so by (T-RAISE) $Gamma tack.r throw v_2 : T$
 
   - *Progress Theorem*: Let $M$ be a closed and well-typed term, i.e. $emptyset tack.r M : T$ then either $M$ is a value, or $exists M'.M -> M'$ or $exists v. M = throw v$. We add the following cases:
-    - The cases for (T-SUM), (T-IF), (T-APP) need to be updated to handle the case $M = throw v$ when applying the inductive hypothesis, resulting in the use of a (RAISE X) rule.
     - (T-RAISE): $M = throw M_1$ and $emptyset tack.r throw M_1 : T$ has a derivation tree of height k+1 while $emptyset tack.r M_1 : T_exn$ has a derivation tree of height k. By inductive hypothesis we distinguish three cases:
       - $M_1 = v$ is a value, then $M = throw v$ satisfies our thesis.
       - $M_1 -> M_1'$, then by (RAISE 1) $M = throw M_1 -> M' = throw M_1'$
@@ -32,12 +31,13 @@
       - $exists v. M_1 = throw v$, then by (TRY HANDLE) $M = try throw v catch N -> M' = N v$
     - (T-SUM): we need to add the following cases to the application of inductive hypothesis of the derivation:
       - $M_1 = throw v_1$ then we can apply (RAISE SUM 1) and obtain $M_1 + M_2 -> throw v_1$
-      - $M_1 = v_1$ and $M_2 = throw v_2$ then we can apply (RAISE SUM 2) and obtain $M_1 + M_2 -> thow v_2$
+      - $M_1 = v_1$ and $M_2 = throw v_2$ then we can apply (RAISE SUM 2) and obtain $M_1 + M_2 -> throw v_2$
     - (T-IFTHENELSE): we need to add the following cases to the application of inductive hypothesis of the derivation:
-      - $M_1 = throw v_1$ we can apply (RAISE IFTHENELSE) and obtain $If M_1 then M_2 else M_3 -> throw v_1$
+      - $M_1 = throw v_1$ we can apply (RAISE IFTHENELSE) and obtain $mif M_1 then M_2 melse M_3 -> throw v_1$
     - (T-APP): we need to add the following cases to the application of inductive hypothesis of the derivation:
       - $M_1 = throw v_1$ then we can apply the rule (RAIS APP 1) and obtain $M_1 M_2 -> throw v_1$
 	    - $M_1 = v_1$ and $M_2 = throw v_2$ then we can apply the rule (RAISE APP 2) and obtain $M_1 M_2-> throw v_2$
+
   - *Safety Theorem*: Let $M$ be a closed and well-typed term, then $M$ does not evolve to a stuck term, that is, if $emptyset tack.r M : T$ and $M ->^* M'$ with $M' arrow.r.not$, then $exists v$ such that either $M' = v$ or $M' = throw v$.
 
     Proof: From $emptyset tack.r M : T$ by the corollary of the Type Preservation Theorem we have that $emptyset tack.r M' : T$ and by the Progress Theorem there are three cases:
