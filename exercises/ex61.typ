@@ -62,7 +62,7 @@
       rule(label: "(S-CLASS)", $C <: B$),
       axiom(fwExtends("B", "A")),
       rule(label: "(S-CLASS)", $B <: A$),
-      rule(n: 2, $C <: A$),
+      rule(n: 2, $C <: A$, label: "(Trans)"),
       rule(label: "(CastNew)", fwReduction("(A) new C()", "new C()")),
       rule(label: "(Cast)", fwReduction("(B) ((A) new C())", "(B) (new C())"))
     ))))
