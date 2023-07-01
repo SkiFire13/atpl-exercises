@@ -23,5 +23,5 @@
   - (T-APP) then $M = M_1 app M_2$, $exists T'. Gamma tack.r M_1 : T' -> T$ and $Gamma tack.r M_2 : T'$ with height at most $k$. We distinguish 3 cases on $M -> M'$:
     - (APP 1): thus $M_1 -> M_1'$. By inductive hypothesis $Gamma tack.r M_1' : T' -> T$ and thus by (T-APP) $Gamma tack.r M_1' app M_2 : T$
     - (APP 2): thus $M_2 -> M_2'$. By inductive hypothesis $Gamma tack.r M_2' : T'$ and thus by (T-APP) $Gamma tack.r M_1 app M_2' : T$
-    - (BETA): thus $M_1 = fn x. M'$, $Gamma, x : T' tack.r M' : T$, $M_2 = v$ and $M -> M'{x := v}$. By substitution lemma $Gamma tack.r M' {x := v} : T$
+    - (BETA): thus $M_1 = fn x. M'$ and $Gamma, x : T' tack.r M' : T$, $M_2 = v$ and $M -> M'{x := v}$. By substitution lemma $Gamma tack.r M' {x := v} : T$
 ]
