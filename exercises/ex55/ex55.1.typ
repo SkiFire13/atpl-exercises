@@ -24,17 +24,17 @@
   ))
   #v(1em)
   #box(prooftree(
-  axiom(""),
-  rule(label: TRY-HANDLE, $try throw 3 catch fn y.y + y -> (fn y. y + y) app 3$)
+    axiom(""),
+    rule(label: TRY-HANDLE, $try throw 3 catch fn y.y + y -> (fn y. y + y) app 3$)
   ))
   #v(1em)
   #box(prooftree(
-  axiom(""),
-  rule(label: BETA, $(fn y. y + y) app 3 -> 3 + 3$)
+    axiom(""),
+    rule(label: BETA, $(fn y. y + y) app 3 -> 3 + 3$)
   ))
   #v(1em)
   #box(prooftree(
-  axiom(""),
-  rule(label: SUM, $3 + 3 -> 6$)
+    axiom(""),
+    rule(label: SUM, $3 + 3 -> 6$)
   ))
 ]
