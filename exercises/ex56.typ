@@ -5,8 +5,7 @@
   Define the operational semantics of the language that contains exceptions together with unit, records and variants.
 ]
 #solution[
-  #set text(size: 11pt)
-  #align(center)[
+  #align(center, text(size: 11pt)[
     #box(prooftree(
       axiom(""),
       rule(label: RAISE-SELECT, $(throw v).l -> throw v$)
@@ -26,6 +25,5 @@
       axiom(""),
       rule(label: RAISE-MATCH, $(throw v) match { case ell_i = x_i => M_i #h(1pt) ^ (i in 1..n)} -> throw v$)
     ))
-    
-  ]
+  ])
 ]

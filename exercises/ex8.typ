@@ -7,29 +7,26 @@
   Show the evaluation of the term $((fn x. 3) app (fn y. y)) app ((fn z. mif z then 1 melse 0) app (mfalse))$. Define a variant of the evaluation rules so that, by keeping a call-by-value strategy, the previous term evolves to a stuck term in fewer reduction steps.
 ]
 #solution[
-  #[
-    #set text(size: 10pt)
-    #align(center)[
-      #box(prooftree(
-        axiom(""),
-        rule(label: BETA, $(fn x. 3) app (fn y. y) -> 3$),
-        rule(label: APP-1, $(fn x. 3) app (fn y. y)) app ((fn z. mif z then 1 melse 0) app (mfalse)
-        -> 3 app ((fn z. mif z then 1 melse 0) app (mfalse))$)
-      ))
-      #vspace
-      #box(prooftree(
-        axiom(""),
-        rule(label: BETA, $(fn z. mif z then 1 melse 0) app (mfalse) -> mif mfalse then 1 melse 0$),
-        rule(label: APP-2, $3 app ((fn z. mif z then 1 melse 0) app (mfalse)) -> 3 app (mif mfalse then 1 melse 0)$)
-      ))
-      #vspace
-      #box(prooftree(
-        axiom(""),
-        rule(label: IF-FALSE, $mif mfalse then 1 melse 0 -> 0$),
-        rule(label: APP-2, $3 app (mif mfalse then 1 melse 0) -> 3 app 0$)
-      ))
-    ]
-  ]
+  #align(center, text(size: 10pt)[
+    #box(prooftree(
+      axiom(""),
+      rule(label: BETA, $(fn x. 3) app (fn y. y) -> 3$),
+      rule(label: APP-1, $(fn x. 3) app (fn y. y)) app ((fn z. mif z then 1 melse 0) app (mfalse)
+      -> 3 app ((fn z. mif z then 1 melse 0) app (mfalse))$)
+    ))
+    #vspace
+    #box(prooftree(
+      axiom(""),
+      rule(label: BETA, $(fn z. mif z then 1 melse 0) app (mfalse) -> mif mfalse then 1 melse 0$),
+      rule(label: APP-2, $3 app ((fn z. mif z then 1 melse 0) app (mfalse)) -> 3 app (mif mfalse then 1 melse 0)$)
+    ))
+    #vspace
+    #box(prooftree(
+      axiom(""),
+      rule(label: IF-FALSE, $mif mfalse then 1 melse 0 -> 0$),
+      rule(label: APP-2, $3 app (mif mfalse then 1 melse 0) -> 3 app 0$)
+    ))
+  ])
   And $3 app 0$ is a stuck term. The term could have evolved to a stuck term faster if we replaced the #APP-2 rule with the following:
   #align(center, box(prooftree(
     axiom($N -> N'$),

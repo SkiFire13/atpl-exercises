@@ -29,7 +29,6 @@
     rule(label: TRY, $try (fn y.y + 2 app (try (mif mfalse then 5\/2 melse throw 5) catch fn z.z+z)) catch fn z.print(z) -> try (fn y.y + 2 app (try throw 5 catch fn z.z+z)) catch fn z.print(z)$)
   ))
   #vspace
-  #set text(size: 7pt)
   #box(prooftree(
     axiom(""),
     rule(label: TRY-HANDLE, $try throw 5 catch fn z.z+z -> (fn z.z+z) app 5$),

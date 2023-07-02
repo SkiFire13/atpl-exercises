@@ -6,14 +6,13 @@
 #exercise[
   Consider the following variant and rule #smallcaps("(Type Match)")
 
-  #set text(size: 10pt)
-  #align(center, box(prooftree(
+  #align(center, text(size: 10pt, box(prooftree(
     axiom($Gamma tack.r M : angle.l ell_i : T_i #h(1pt) ^ (i in J) angle.r$),
     axiom($J subset.eq I$),
     axiom($forall i in J quad Gamma, x_i : T_i tack.r M_i : T$),
     rule(n: 3, label: TYPE-MATCH-GEN-2,
         $Gamma tack.r M match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in I) } : T$)
-  )))
+  ))))
   Prove that the safety theorem still holds or give a counterexample.
 ]
 #solution[

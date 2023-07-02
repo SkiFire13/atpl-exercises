@@ -17,16 +17,14 @@
     rule(label: TRY, $try (try (M_p app 5) catch fn z.print(z)) catch fn y.y + y -> try (try (mif even (5) then 5\/2 melse throw 5) catch fn z.print(z)) catch fn y.y + y$)
   ))
   #vspace
-  #set text(size: 6pt)
-  #box(prooftree(
+  #text(size: 6pt, box(prooftree(
     axiom(""),
     rule(label: MATH-AX, $even (5) -> mfalse$),
     rule(label: IF, $mif even (5) then 5\/2 melse throw 5 -> mif mfalse then 5\/2 melse throw 5$),
     rule(label: TRY, $try (mif even (5) then 5\/2 melse throw 5) catch fn z.print(z) -> try (mif mfalse then 5\/2 melse throw 5) catch fn z.print(z)$),
     rule(label: TRY, $try (try (mif even (5) then 5\/2 melse throw 5) catch fn z.print(z)) catch fn y.y + y -> try (try (mif mfalse then 5\/2 melse throw 5) catch fn z.print(z)) catch fn y.y + y$)
-  ))
+  )))
   #vspace
-  #set text(size: 7pt)
   #box(prooftree(
     axiom(""),
     rule(label: IF-FALSE, $mif mfalse then 5\/2 melse throw 5 -> throw 5$),

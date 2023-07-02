@@ -20,7 +20,6 @@
   ))
   #vspace
 ]
-#set text(size: 9pt)
 #align(center)[
   #box(prooftree(
     axiom(""),

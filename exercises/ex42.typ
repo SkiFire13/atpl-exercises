@@ -14,26 +14,25 @@
   $M ::= ... | M  match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f }$
 
   The following transition rules:
-  #[
-    #set text(size: 7.5pt)
-    #align(center, box(prooftree(
+  #align(center, text(size: 7.5pt)[
+    #box(prooftree(
       axiom($M arrow.r M'$),
       rule(label: RED-MATCH-DEFAULT, $M match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f } arrow.r M' match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f }$)
-    )))
+    ))
 
-    #align(center, box(prooftree(
+    #box(prooftree(
       axiom(""),
       rule(label: (left: MATCH-DEFAULT-CASE, right: $j in 1..n$), $angle.l ell_j = v_j angle.r match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f } arrow.r M_j {x_j := v_j}$)
-    )))
+    ))
 
-    #align(center, box(prooftree(
+    #box(prooftree(
       axiom(""),
       rule(label: (left: MATCH-DEFAULT, right: $j in.not 1..n$), $angle.l ell_j = v_j angle.r match { case ell_i = x_i arrow.r.double M_i #h(1pt) ^ (i in 1..n), default M_f } arrow.r M_f$)
-    )))
-  ]
+    ))
+  ])
 
   And the following typing rule:
-  #text(size: 7.5pt, align(center, box(prooftree(
+  #align(center, text(size: 7.5pt, box(prooftree(
     axiom($Gamma tack.r M : angle.l ell_i : T_i #h(1pt) ^ (i in 1 .. m) angle.r$),
     axiom($m gt.eq n$),
     axiom($forall i in 1..n quad Gamma, x_i : T_i tack.r M_i : T$),
