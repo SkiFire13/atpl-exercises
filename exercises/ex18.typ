@@ -6,7 +6,7 @@
 ]
 #solution[
   #let ST = "ST"
-  We consider the definition of subterm from exercise 3 and let $ST = Subterms$ for brevity. We want to prove that, given $Gamma tack.r M : T$ then $forall M' in ST(M). exists Gamma', T'. Gamma' tack.r M' : T'$. We prove this by induction on the height of the judgement $Gamma tack.r M: T$. We distinguish the following cases:
+  We consider the definition of subterm from exercise 3. We want to prove that, given $Gamma tack.r M : T$ then $forall M' in ST(M). exists Gamma', T'. Gamma' tack.r M' : T'$. We prove this by induction on the height of the judgement $Gamma tack.r M: T$. We distinguish the following cases:
   - Base cases:
     - #T-VAR: then $M = x$, $ST(M) = {x}$ and the conclusion is already true;
     - #T-INT: then $M = n$, $ST(M) = {n}$ and the conclusion is already true;

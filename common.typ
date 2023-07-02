@@ -42,7 +42,7 @@
 
 #let Llang = symbol("\u{2112}")
 #let Terms = "Terms"
-#let Subterms = "Subterms"
+#let Subterms = "ST"
 
 #let Bool = "Bool"
 #let Nat = "Nat"
