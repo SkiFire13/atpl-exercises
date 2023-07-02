@@ -140,7 +140,7 @@
 #let NEW = smallcaps("(New)")
 #let CAST = smallcaps("(Cast)")
 #let FIELD = smallcaps("(Field)")
-#let INVK-RECV = smallcaps("(Invk-Recv)")
+#let INVK-RECV = smallcaps("(InvkRecv)")
 #let DCAST = smallcaps("(Dcast)")
 #let S-CLASS = smallcaps("(S-Class)")
 
