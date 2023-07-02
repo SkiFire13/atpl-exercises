@@ -127,6 +127,7 @@
 #let T-TRY = smallcaps("(T-Try)")
 #let T-RAISE = smallcaps("(T-Raise)")
 
+#let ARROW = smallcaps("(Arrow)")
 #let SUBSUMPTION = smallcaps("(Subsumption)")
 #let SUB-WIDTH = smallcaps("(Sub-Width)")
 #let REFLEX = smallcaps("(Reflex)")

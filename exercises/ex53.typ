@@ -1,6 +1,5 @@
 #import "../common.typ": *
 
-#let ARROW = smallcaps("(Arrow)")
 #let NEW-ARROW = smallcaps("(New-Arrow)")
 
 // Note 15 ex 10
