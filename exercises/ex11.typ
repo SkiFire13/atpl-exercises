@@ -23,7 +23,7 @@
     + call-by-value: `test(7, 2 * 4)` $->$ `test(7, 8)` $->$ `7*7` $->$ `49`
     + call-by-name: `test(7, 2 * 4)` $->$ `7*7` $->$ `49`
   - `test(3 + 4, 2 * 4)`: the CBN strategy will skip the `2 * 4` instruction but will duplicate the step needed to execute `3 + 4`, while the CBV strategy will execute `2 * 4` but don't duplicate the execution of `3 + 4`, resulting in the same amount of steps required:
-    + call-by-value: `test(3 + 4, 2 * 4)` $->$ `test(7, 2 * 4)` $->$ `test(7, 8)` $->$ `7*7` $->$ `49`
+    + call-by-value: `test(3 + 4, 2 * 4)` $->$ `test(7, 2 * 4)` $->$ `test(7, 8)` $->$ `7 * 7` $->$ `49`
     + call-by-name: `test(3 + 4, 2 * 4)` $->$ `(3 + 4) * (3 + 4)` $->$ `7 * (3 + 4)` $->$ `7 * 7` $->$ `49`
 
 ]
