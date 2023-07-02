@@ -16,5 +16,13 @@
   ]
 ]
 #solution[
-  No, the proof for the canonical form lemma would fail, moreover terms like $mtrue + 0$ would be well typed but would be stuck, thus being a counterexample to the safety theorem.
+  No, the proof for the canonical form lemma would fail.
+
+  The term $mtrue + 0$ would be a well typed but stuck term:
+  #align(center, box(prooftree(
+    axiom(label: "(T-TRUE')", $emptyset tack.r mtrue : Nat$),
+    axiom(label: "(T-Int)", $emptyset tack.r 0 : Nat$),
+    rule(n: 2, label: "(T-Sum)", $emptyset tack.r mtrue + 0 : Nat$)
+  )))
+  // moreover terms like $mtrue + 0$ would be well typed but would be stuck, thus being a counterexample to the safety theorem.
 ]

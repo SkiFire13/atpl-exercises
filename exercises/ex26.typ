@@ -11,5 +11,23 @@
   )))
 ]
 #solution[
-  The proof for the inversion lemma would fail and thus the case for (IF-TRUE) and (IF-FALSE) in the subject reduction theorem. For example $(mif mtrue then 0 melse 0) app 0$ would be well typed, but it evolves to $0 app 0$ which is stuck and not well typed.
+  The proof for the inversion lemma would fail and thus the case for (IF-TRUE) and (IF-FALSE) in the subject reduction theorem.
+
+  For example the term $(mif mtrue then 0 melse 0) app 0$ would be well typed:
+  #align(center, box(prooftree(
+    axiom(label: "(T-True)", $emptyset tack.r mtrue : Bool$),
+    axiom(label: "(T-Int)", $emptyset tack.r 0 : Nat$),
+    axiom(label: "(T-Int)", $emptyset tack.r 0 : Nat$),
+    rule(n: 3, label: "(T-IF')", $emptyset tack.r mif mtrue then 0 melse 0 : Nat -> Nat$),
+    axiom(label: "(T-Int)", $emptyset tack.r 0 : Nat$),
+    rule(n: 2, label: "(T-App)", $emptyset tack.r (mif mtrue then 0 melse 0) app 0 : Nat$)
+  )))
+
+  but it evolves to a stuck (and also non well typed) term:
+  #align(center, box(prooftree(
+    axiom($$),
+    rule(label: "(If-True)", $mif mtrue then 0 melse 0 -> 0$),
+    rule(label: "(App 1)", $(mif mtrue then 0 melse 0) app 0 -> 0 app 0$)
+  )))
+  // $0 app 0$ which is stuck and not well typed.
 ]
