@@ -1,6 +1,6 @@
 #import "../../common.typ": *
 
-#let MATH-AX = smallcaps("Math-Ax")
+#let MATH-AX = smallcaps("(Math-Ax)")
 
 #set text(size: 9pt)
 #align(center)[
