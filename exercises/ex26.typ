@@ -13,7 +13,7 @@
   )))
 ]
 #solution[
-  The proof for the inversion lemma would fail and thus the case for (IF-TRUE) and (IF-FALSE) in the subject reduction theorem.
+  The proof for the inversion lemma would fail and thus the case for #IF-TRUE and #IF-FALSE in the subject reduction theorem.
 
   For example the term $(mif mtrue then 0 melse 0) app 0$ would be well typed:
   #align(center, box(prooftree(
