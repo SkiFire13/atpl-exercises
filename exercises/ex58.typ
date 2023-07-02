@@ -32,10 +32,10 @@
     - (T-SUM): we need to add the following cases to the application of inductive hypothesis of the derivation:
       - $M_1 = throw v_1$ then we can apply (RAISE SUM 1) and obtain $M_1 + M_2 -> throw v_1$
       - $M_1 = v_1$ and $M_2 = throw v_2$ then we can apply (RAISE SUM 2) and obtain $M_1 + M_2 -> throw v_2$
-    - (T-IFTHENELSE): we need to add the following cases to the application of inductive hypothesis of the derivation:
+    - (T-IFTHENELSE): we need to add the following case to the application of inductive hypothesis of the derivation:
       - $M_1 = throw v_1$ we can apply (RAISE IFTHENELSE) and obtain $mif M_1 then M_2 melse M_3 -> throw v_1$
     - (T-APP): we need to add the following cases to the application of inductive hypothesis of the derivation:
-      - $M_1 = throw v_1$ then we can apply the rule (RAIS APP 1) and obtain $M_1 M_2 -> throw v_1$
+      - $M_1 = throw v_1$ then we can apply the rule (RAISE APP 1) and obtain $M_1 M_2 -> throw v_1$
 	    - $M_1 = v_1$ and $M_2 = throw v_2$ then we can apply the rule (RAISE APP 2) and obtain $M_1 M_2-> throw v_2$
 
   - *Safety Theorem*: Let $M$ be a closed and well-typed term, then $M$ does not evolve to a stuck term, that is, if $emptyset tack.r M : T$ and $M ->^* M'$ with $M' arrow.r.not$, then $exists v$ such that either $M' = v$ or $M' = throw v$.
