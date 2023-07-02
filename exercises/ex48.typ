@@ -17,11 +17,11 @@
 
   #set text(size: 8.5pt)
   #align(center, box(prooftree(
-    axiom(label: "(T-NAT)", $emptyset tack.r 1 : Nat$),
-    axiom(label: "(T-NAT)", $emptyset tack.r 2 : Nat$),
-    axiom(label: "(T-NAT)", $emptyset tack.r 3 : Nat$),
-    rule(n: 3, label: "(T-RECORD)", $emptyset tack.r {ell_1 = 1, ell_2 = 2, ell_3 = 3} : {ell_1: Nat, ell_2: Nat, ell_3: Nat}$),
-    axiom(label: "(SUB-WIDTH)", ${ell_1: Nat, ell_2: Nat, ell_3: Nat} <: T$),
-    rule(n: 2, label: "(SUBSUMPTION)", $emptyset tack.r {ell_1 = 1, ell_2 = 2, ell_3 = 3} : T$),
+    axiom(label: T-INT, $emptyset tack.r 1 : Nat$),
+    axiom(label: T-INT, $emptyset tack.r 2 : Nat$),
+    axiom(label: T-INT, $emptyset tack.r 3 : Nat$),
+    rule(n: 3, label: T-RECORD, $emptyset tack.r {ell_1 = 1, ell_2 = 2, ell_3 = 3} : {ell_1: Nat, ell_2: Nat, ell_3: Nat}$),
+    axiom(label: SUB-WIDTH, ${ell_1: Nat, ell_2: Nat, ell_3: Nat} <: T$),
+    rule(n: 2, label: SUBSUMPTION, $emptyset tack.r {ell_1 = 1, ell_2 = 2, ell_3 = 3} : T$),
   )))
 ]

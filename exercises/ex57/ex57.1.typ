@@ -4,19 +4,19 @@
 #align(center)[
   #box(prooftree(
     axiom(""),
-    rule(label: "(T-VAR)", $emptyset, x : Bool tack.r x : Bool$),
-    rule(label: "(T-FUN)", $emptyset tack.r fn x:Bool. x : Bool -> Bool$),
+    rule(label: T-VAR, $emptyset, x : Bool tack.r x : Bool$),
+    rule(label: T-FUN, $emptyset tack.r fn x:Bool. x : Bool -> Bool$),
     axiom(""),
-    rule(label: "(T-NAT)", $emptyset tack.r 0 : T_exn$),
-    rule(label: "(T-RAISE)", $emptyset tack.r throw 0 : Bool$),
-    rule(n : 2, label: "(T-APP)", $emptyset tack.r (fn x:Bool. x) throw 0 : Bool$)
+    rule(label: T-INT, $emptyset tack.r 0 : T_exn$),
+    rule(label: T-RAISE, $emptyset tack.r throw 0 : Bool$),
+    rule(n : 2, label: T-APP, $emptyset tack.r (fn x:Bool. x) throw 0 : Bool$)
   ))
   #v(1em)
 ]
 #align(center)[
   #box(prooftree(
     axiom(""),
-    rule(label: "(RAISE APP 2)", $(fn x:Bool. x) throw 0 -> throw 0$)
+    rule(label: RAISE-APP-2, $(fn x:Bool. x) throw 0 -> throw 0$)
   ))
   #v(1em)
 ]

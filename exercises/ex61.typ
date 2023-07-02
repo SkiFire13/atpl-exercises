@@ -12,64 +12,64 @@
     #align(center, box(prooftree(
       axiom(pairFields),
       axiom(fwLookup("Pair", "snd")),
-      rule(n: 2, label: "(ProjNew)", fwReduction("new Pair(new A(), new B()).snd", "new B()"))
+      rule(n: 2, label: PROJ-NEW, fwReduction("new Pair(new A(), new B()).snd", "new B()"))
     )))
 
   - ```java (Pair) new Pair(new A(), new B())```
     #align(center, box(prooftree(
-      axiom(label: "(Reflex)", $Pair <: Pair$),
-      rule(label: "(CastNew)", fwReduction("(Pair) new Pair(new A(), new B())", "new Pair(new A(), new B())"))
+      axiom(label: REFLEX, $Pair <: Pair$),
+      rule(label: CAST-NEW, fwReduction("(Pair) new Pair(new A(), new B())", "new Pair(new A(), new B())"))
     )))
 
   - ```java new Pair(new A(), new B()).setfst(new B())```
     #text(size: 8pt, align(center, box(prooftree(
       axiom(fwMBody("setfst", "Pair", "newfst", "new Pair(newfst, this.snd)")),
       axiom($1 = 1$),
-      rule(n: 2, label: "(InvkNew)", fwReduction("new Pair(new A(), new B()).setfst(new B())", "new Pair(new B(), new Pair(new A(), new B()).snd)"))
+      rule(n: 2, label: INVK-NEW, fwReduction("new Pair(new A(), new B()).setfst(new B())", "new Pair(new B(), new Pair(new A(), new B()).snd)"))
     ))))
 
     #text(size: 10pt, align(center, box(prooftree(
       axiom(pairFields),
       axiom(fwLookup("Pair", "snd")),
-      rule(n: 2, label: "(ProjNew)", fwReduction("new Pair(new A(), new B()).snd", "new B()")),
-      rule(label: "(newArg)", fwReduction("new Pair(new B(), new Pair(new A(), new B()).snd)", "new Pair(new B(), new B())"))
+      rule(n: 2, label: PROJ-NEW, fwReduction("new Pair(new A(), new B()).snd", "new B()")),
+      rule(label: NEW-ARG, fwReduction("new Pair(new B(), new Pair(new A(), new B()).snd)", "new Pair(new B(), new B())"))
     ))))
 
   - ```java ((Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)).snd```
     #text(size: 8pt, align(center, box(prooftree(
       axiom(pairFields),
       axiom(fwLookup("Pair", "fst")),
-      rule(n: 2, label: "(PorojNew)", fwReduction("new Pair(new Pair(new A(), new B()), new A()).fst", "new Pair(new A(), new B())")),
-      rule(label: "(Cast)", fwReduction("(Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)", "(Pair) (new Pair(new A(), new B()))")),
-      rule(label: "(Field)", fwReduction("((Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)).snd", "((Pair) (new Pair(new A(), new B()))).snd"))
+      rule(n: 2, label: PROJ-NEW, fwReduction("new Pair(new Pair(new A(), new B()), new A()).fst", "new Pair(new A(), new B())")),
+      rule(label: CAST, fwReduction("(Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)", "(Pair) (new Pair(new A(), new B()))")),
+      rule(label: FIELD, fwReduction("((Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)).snd", "((Pair) (new Pair(new A(), new B()))).snd"))
     ))))
 
     #text(size: 11pt, align(center, box(prooftree(
-      axiom(label: "(Reflex)", $Pair <: Pair$),
-      rule(label: "(CastNew)", fwReduction("(Pair) new Pair(new A(), new B())", "new Pair(new A(), new B())")),
-      rule(label: "(Field)", fwReduction("(Pair) (new Pair(new A(), new B())).snd", "(new Pair(new A(), new B())).snd"))
+      axiom(label: REFLEX, $Pair <: Pair$),
+      rule(label: CAST-NEW, fwReduction("(Pair) new Pair(new A(), new B())", "new Pair(new A(), new B())")),
+      rule(label: FIELD, fwReduction("(Pair) (new Pair(new A(), new B())).snd", "(new Pair(new A(), new B())).snd"))
     ))))
 
     #align(center, box(prooftree(
       axiom(pairFields),
       axiom(fwLookup("Pair", "snd")),
-      rule(n: 2, label: "(ProjNew)", fwReduction("(new Pair(new A(), new B())).snd", "new B()"))
+      rule(n: 2, label: PROJ-NEW, fwReduction("(new Pair(new A(), new B())).snd", "new B()"))
     )))
 
   - ```java (B) ((A)new C())```
     #text(size: 10pt, align(center, box(prooftree(
       axiom(fwExtends("C", "B")),
-      rule(label: "(S-CLASS)", $C <: B$),
+      rule(label: S-CLASS, $C <: B$),
       axiom(fwExtends("B", "A")),
-      rule(label: "(S-CLASS)", $B <: A$),
-      rule(n: 2, $C <: A$, label: "(Trans)"),
-      rule(label: "(CastNew)", fwReduction("(A) new C()", "new C()")),
-      rule(label: "(Cast)", fwReduction("(B) ((A) new C())", "(B) (new C())"))
+      rule(label: S-CLASS, $B <: A$),
+      rule(n: 2, label: TRANS, $C <: A$),
+      rule(label: CAST-NEW, fwReduction("(A) new C()", "new C()")),
+      rule(label: CAST, fwReduction("(B) ((A) new C())", "(B) (new C())"))
     ))))
 
     #align(center, box(prooftree(
       axiom(fwExtends("C", "B")),
-      rule(label: "(S-CLASS)", $C <: B$),
-      rule(label: "(CastNew)", fwReduction("(B) (new C())", "new C()"))
+      rule(label: S-CLASS, $C <: B$),
+      rule(label: CAST-NEW, fwReduction("(B) (new C())", "new C()"))
     )))
 ]

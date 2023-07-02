@@ -33,14 +33,14 @@
 
     #align(center, box(prooftree(
       axiom(fwExtends("B", "A")),
-      rule(label: "(S-CLASS)", $B <: A$),
-      rule(label: "(CastNew)", fwReduction("(A) new B()", "new B()")),
-      rule(label: "(InvkRecv)", fwReduction("((A) new B()).m()", "(new B()).m()"))
+      rule(label: S-CLASS, $B <: A$),
+      rule(label: CAST-NEW, fwReduction("(A) new B()", "new B()")),
+      rule(label: INVK-RECV, fwReduction("((A) new B()).m()", "(new B()).m()"))
     )))
 
     #align(center, box(prooftree(
       axiom(fwMBody("m", "B", "new B()")),
       axiom($0 = 0$),
-      rule(n: 2, label: "(InvkNew)", fwReduction("(new B()).m()", "new B() {this := new B()}"))
+      rule(n: 2, label: INVK-NEW, fwReduction("(new B()).m()", "new B() {this := new B()}"))
     )))
 ]

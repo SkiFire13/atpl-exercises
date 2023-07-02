@@ -4,20 +4,20 @@
 #align(center)[
   #box(prooftree(
     axiom(""),
-    rule(label: "(T-TRUE)", $emptyset tack.r mtrue : Bool$),
+    rule(label: T-TRUE, $emptyset tack.r mtrue : Bool$),
     axiom(""),
-    rule(label: "(T-NAT)", $emptyset tack.r 2 : Nat$),
+    rule(label: T-INT, $emptyset tack.r 2 : Nat$),
     axiom(""),
-    rule(label: "(T-NAT)", $emptyset tack.r 0 : T_exn$),
-    rule(label: "(T-RAISE)", $emptyset tack.r throw 0 : Nat$),
-    rule(n : 3, label: "(T-IF)", $emptyset tack.r mif mtrue then 2 melse throw 0 : Nat$)
+    rule(label: T-INT, $emptyset tack.r 0 : T_exn$),
+    rule(label: T-RAISE, $emptyset tack.r throw 0 : Nat$),
+    rule(n : 3, label: T-IF, $emptyset tack.r mif mtrue then 2 melse throw 0 : Nat$)
   ))
   #v(1em)
 ]
 #align(center)[
   #box(prooftree(
     axiom(""),
-    rule(label: "(IF TRUE)", $mif mtrue then 2 melse throw 0 -> 2$)
+    rule(label: IF-TRUE, $mif mtrue then 2 melse throw 0 -> 2$)
   ))
   #v(1em)
 ]

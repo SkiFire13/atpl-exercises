@@ -17,23 +17,23 @@
   #align(center)[
     #box(prooftree(
       axiom(""),
-      rule(label: "(T-NAT)", $emptyset tack.r 0 : T_exn$),
-      rule(label: "(T-RAISE)", $emptyset tack.r throw 0 : Nat$),
+      rule(label: T-INT, $emptyset tack.r 0 : T_exn$),
+      rule(label: T-RAISE, $emptyset tack.r throw 0 : Nat$),
       axiom(""),
-      rule(label: "(T-NAT)", $emptyset, x : T_exn tack.r 0 : T_exn$),
-      rule(label: "(T-RAISE)", $emptyset, x : T_exn tack.r throw 0 : Nat$),
-      rule(label: "(T-FUN)", $emptyset tack.r fn x. throw 0 : T_exn -> Nat$),
-      rule(n : 2, label: "(T-TRY)", $emptyset tack.r try throw 0 catch fn x. throw 0 : Nat$)
+      rule(label: T-INT, $emptyset, x : T_exn tack.r 0 : T_exn$),
+      rule(label: T-RAISE, $emptyset, x : T_exn tack.r throw 0 : Nat$),
+      rule(label: T-FUN, $emptyset tack.r fn x. throw 0 : T_exn -> Nat$),
+      rule(n : 2, label: T-TRY, $emptyset tack.r try throw 0 catch fn x. throw 0 : Nat$)
     ))
     #v(1em)
     #box(prooftree(
       axiom(""),
-      rule(label: "(TRY HANDLE)", $try throw 0 catch fn x. throw 0 -> (fn x.throw 0) app 0$)
+      rule(label: TRY-HANDLE, $try throw 0 catch fn x. throw 0 -> (fn x.throw 0) app 0$)
     ))
     #v(1em)
     #box(prooftree(
       axiom(""),
-      rule(label: "(BETA)", $(fn x.throw 0) app 0 -> throw 0$)
+      rule(label: BETA, $(fn x.throw 0) app 0 -> throw 0$)
     ))
   ]
 ]

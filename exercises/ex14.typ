@@ -14,7 +14,7 @@
 
   But we can also prove
   #align(center, box(prooftree(
-    axiom(label: "(T-False)", $emptyset tack.r mfalse : Bool$)
+    axiom(label: T-FALSE, $emptyset tack.r mfalse : Bool$)
   )))
 
   From unicity of typing $Bool = U = Nat$ absurd.
@@ -23,6 +23,6 @@
   It however produces no runtime error, successfully evaluating to $mtrue$.
   #align(center, box(prooftree(
     axiom(""),
-    rule(label: "(Beta)", $(fn x : Nat .mtrue) app mfalse -> mtrue$)
+    rule(label: BETA, $(fn x : Nat .mtrue) app mfalse -> mtrue$)
   )))
 ]
