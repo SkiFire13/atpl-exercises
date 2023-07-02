@@ -16,5 +16,24 @@
   ]
 ]
 #solution[
-  No because the proof for the inversion lemma would fail and with it all the other proofs. For example $(fn x: Bool. mif x then 0 melse 0) app 0$ would be well typed, but after the first reduction we would get $mif 0 then 0 melse 0$ which is stuck and not well typed.
+  No because the proof for the inversion lemma would fail and with it all the other proofs. For example $(fn x: Bool. mif x then 0 melse 0) app 0$ would be well typed:
+
+  #align(center, box(prooftree(
+    axiom(label: "(T-var)", $x : Bool tack.r x : Bool$),
+    axiom(label: "(T-Int)", $x : Bool tack.r 0 : Nat$),
+    axiom(label: "(T-Int)", $x : Bool tack.r 0 : Nat$),
+    rule(n: 3, label: "(T-If)", $x : Bool tack.r mif x then 0 melse 0 : Nat$),
+    rule(label: "(T-FUN')", $emptyset tack.r fn x : Bool. mif x then 0 melse 0 : Nat -> Nat$),
+    axiom(label: "", $emptyset tack.r 0 : Nat$),
+    rule(n: 2, label: "(T-APP')", $emptyset tack.r (fn x: Bool. mif x then 0 melse 0) app 0 : Nat$)
+  )))
+
+  But after the first reduction we would get a stuck term:
+
+  #align(center, box(prooftree(
+    axiom(""),
+    rule(label: "(Beta)", $(fn x : Bool. mif x then 0 melse 0) app 0 -> mif 0 then 0 melse 0$)
+  )))
+  $ mif 0 then 0 melse 0 arrow.r.not $
+  /// $mif 0 then 0 melse 0$ which is stuck and not well typed.
 ]
