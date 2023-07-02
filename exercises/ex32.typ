@@ -6,8 +6,8 @@
 ]
 #solution[
   - *Inversion of typing*: add cases:
-    - if $Gamma tack.r (M_1, M_2): T$ is derivable then $exists T_1, T_2.$ $T = (T_1, T_2)$ and $Gamma tack.r M_i : T_i$. Proof immediate since only (T-PAIR) can apply.
-    - if $Gamma tack.r M.\_1 : T_1$ is derivable then $exists T_2.$ $Gamma tack.r M : (T_1, T_2)$ derivable (and viceversa for $.\_2$). Proof immediate since only (T-PROJECT-1) can apply.
+    - if $Gamma tack.r (M_1, M_2): T$ is derivable then $exists T_1, T_2.$ $T = T_1 * T_2$ and $forall i in {1,2}.$ $Gamma tack.r M_i : T_i$. Proof immediate since only (T-PAIR) can apply.
+    - if $Gamma tack.r M.\_1 : T_1$ is derivable then $exists T_2.$ $Gamma tack.r M : T_1 * T_2$ derivable (and viceversa for $.\_2$). Proof immediate since only (T-PROJECT-1) can apply.
   - *Canonical forms theorem*: if $v$ is a value and $Gamma tack.r v : T_1 * T_2$ then $v = (v_1, v_2)$, proof immediate;
   - *Progress theorem*: add the following inductive cases:
     - (T-PAIR): then $M = (M_1, M_2)$ and $emptyset tack.r M_i : T_i$ with height at most $k$. By inductive hypothesis on $emptyset tack.r M_1 : T_1$:
