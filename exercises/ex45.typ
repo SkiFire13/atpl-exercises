@@ -31,9 +31,9 @@
     rule(n: 2, label: T-APP, $emptyset tack.r (fn r:{ell: Nat}. r.ell + 2) app {ell = 0, ell' = 1} : Nat$),
   )))
 
-  #v(1em)
+  #vspace
   #line(length: 100%)
-  #v(1em)
+  #vspace
 
   #set text(size: 10pt)
 

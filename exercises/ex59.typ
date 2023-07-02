@@ -25,12 +25,12 @@
       rule(label: T-FUN, $emptyset tack.r fn x. throw 0 : T_exn -> Nat$),
       rule(n : 2, label: T-TRY, $emptyset tack.r try throw 0 catch fn x. throw 0 : Nat$)
     ))
-    #v(1em)
+    #vspace
     #box(prooftree(
       axiom(""),
       rule(label: TRY-HANDLE, $try throw 0 catch fn x. throw 0 -> (fn x.throw 0) app 0$)
     ))
-    #v(1em)
+    #vspace
     #box(prooftree(
       axiom(""),
       rule(label: BETA, $(fn x.throw 0) app 0 -> throw 0$)

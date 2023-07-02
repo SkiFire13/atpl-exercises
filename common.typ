@@ -1,5 +1,7 @@
 #import "prooftree/prooftree.typ": *
 
+#let vspace = v(1em)
+
 #let typst_label = label
 
 #let exercise(label: none, content)  = [
@@ -26,13 +28,13 @@
   #parbreak()
   *Solution.* #h(0.5em)
   #content
-  #v(2em)
+  #vspace
 ]
 
 #let sub_exercises(ex, amount) = {
   range(amount)
     .map(i => include "exercises/ex" + str(ex) + "/ex" + str(ex) + "." + str(i + 1) + ".typ")
-    .join(v(2em) + line(length: 100%) + v(2em))
+    .join(vspace + line(length: 100%) + vspace)
 }
 
 #let size = math.op("size")

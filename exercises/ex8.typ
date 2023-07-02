@@ -16,13 +16,13 @@
         rule(label: APP-1, $(fn x. 3) app (fn y. y)) app ((fn z. mif z then 1 melse 0) app (mfalse)
         -> 3 app ((fn z. mif z then 1 melse 0) app (mfalse))$)
       ))
-      #v(1em)
+      #vspace
       #box(prooftree(
         axiom(""),
         rule(label: BETA, $(fn z. mif z then 1 melse 0) app (mfalse) -> mif mfalse then 1 melse 0$),
         rule(label: APP-2, $3 app ((fn z. mif z then 1 melse 0) app (mfalse)) -> 3 app (mif mfalse then 1 melse 0)$)
       ))
-      #v(1em)
+      #vspace
       #box(prooftree(
         axiom(""),
         rule(label: IF-FALSE, $mif mfalse then 1 melse 0 -> 0$),

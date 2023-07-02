@@ -18,7 +18,7 @@
     rule(label: T-FUN, $emptyset tack.r fn y.y : T_exn -> Nat$),
     rule(n : 2, label: T-TRY, $emptyset tack.r try ((fn x:Bool. throw 0) app mfalse) + 5 catch fn y.y : Nat$)
   ))
-  #v(1em)
+  #vspace
 ]
 #set text(size: 9pt)
 #align(center)[
@@ -28,18 +28,18 @@
     rule(label: SUM-LEFT, $((fn x:Bool. throw 0) app mfalse) + 5 -> (throw 0) + 5$),
     rule(label: TRY, $try ((fn x:Bool. throw 0) app mfalse) + 5 catch fn y.y -> try (throw 0) + 5 catch fn y.y$)
   ))
-  #v(1em)
+  #vspace
   #box(prooftree(
     axiom(""),
     rule(label: RAISE-SUM-1, $(throw 0) + 5 -> throw 0$),
     rule(label: TRY, $try (throw 0) + 5 catch fn y.y -> try throw 0 catch fn y.y$)
   ))
-  #v(1em)
+  #vspace
   #box(prooftree(
     axiom(""),
     rule(label: TRY-HANDLE, $try throw 0 catch fn y.y -> (fn y.y) app 0$)
   ))
-  #v(1em)
+  #vspace
   #box(prooftree(
     axiom(""),
     rule(label: BETA, $(fn y.y) app 0 -> 0$)

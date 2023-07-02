@@ -14,7 +14,7 @@
     rule(label: T-FUN, $emptyset tack.r fn y.y : T_exn -> Nat$),
     rule(n : 2, label: T-TRY, $emptyset tack.r try (throw 0 app mtrue) catch fn y.y : Nat$)
   ))
-  #v(1em)
+  #vspace
 ]
 #align(center)[
   #box(prooftree(
@@ -22,12 +22,12 @@
     rule(label: RAISE-APP-1, $throw 0 app mtrue -> throw 0$),
     rule(label: TRY, $try (throw 0 app mtrue) catch fn y.y -> try throw 0 catch fn y.y$)
   ))
-  #v(1em)
+  #vspace
   #box(prooftree(
     axiom(""),
     rule(label: TRY-HANDLE, $try throw 0 catch fn y.y -> (fn y.y) app 0$)
   ))
-  #v(1em)
+  #vspace
   #box(prooftree(
     axiom(""),
     rule(label: BETA, $(fn y.y) app 0 -> 0$)
