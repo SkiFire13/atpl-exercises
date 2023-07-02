@@ -4,7 +4,7 @@
 
 // Note 13 ex 15
 #exercise[
-  Consider the following variant and rule #smallcaps("(TYPE MATCH)")
+  Consider the following variant and rule #smallcaps("(Type Match)")
 
   #set text(size: 10pt)
   #align(center, box(prooftree(
