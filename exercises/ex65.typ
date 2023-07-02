@@ -68,7 +68,7 @@
     #text(size: 10pt, align(center, box(prooftree(
       axiom($pi_2$),
       axiom(pairFields),
-      axiom(fwLookup("fst", "Pair")),
+      axiom(fwLookup("Pair", "fst")),
       rule(n: 3, label: FIELD, fwType(emptyset, "new Pair(new Pair(new A(), new B()), new A()).fst", "Object")),
       axiom($pi_("pt")$),
       axiom($"Pair" eq.not "Object"$),
@@ -80,7 +80,7 @@
     #text(size: 11pt, align(center, box(prooftree(
       axiom($pi_("f ")$),
       axiom(pairFields),
-      axiom(fwLookup("snd", "Pair")),
+      axiom(fwLookup("Pair", "snd")),
       rule(n: 3, label: FIELD, fwType(emptyset, "((Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)).snd", "Object"))
     ))))
 
@@ -116,7 +116,7 @@
       #text(size: 10pt, align(center, box(prooftree(
         axiom($pi_2$),
         axiom(pairFields),
-        axiom(fwLookup("fst", "Pair")),
+        axiom(fwLookup("Pair", "fst")),
         rule(n: 3, label: FIELD, fwType(emptyset, "new Pair(new Pair(new A(), new B()), new A()).fst", "Object")),
       ))))
 
