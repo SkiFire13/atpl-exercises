@@ -124,7 +124,7 @@
 #let T-SELECT = smallcaps("(T-Select)")
 #let T-VARIANT = smallcaps("(T-Variant)")
 #let T-MATCH = smallcaps("(T-Match)")
-#let T-TRY = smallcaps("T-Try")
+#let T-TRY = smallcaps("(T-Try)")
 #let T-RAISE = smallcaps("(T-Raise)")
 
 #let SUBSUMPTION = smallcaps("(Subsumption)")
