@@ -5,5 +5,7 @@
   Is the judgment $Gamma tack.r x app x : T$ derivable? If yes show a derivation (for some $Gamma, T$), otherwise prove that it is not derivable.
 ]
 #solution[
-  The judgement is not derivable because the only typing rule applicable is (T-APP), but it ends up requiring $x: U -> T$ and $x: U$, which can't be the same type.
+  Suppose the judgemnt derivable then by inversion lemma we would obtain:
+  $Gamma tack.r x : U -> T$ and $Gamma tack.r x : U$, by unicity of typing
+  $U -> T = U$ absurd.
 ]
