@@ -7,22 +7,8 @@
 #solution[
   This is not a well typed term.
 
-  Suppose the term $M$ is well typed $emptyset tack.r M : S$
+  Suppose the term $M$ is well typed $emptyset tack.r M : S$.
   By inversion lemma then $emptyset tack.r (fn x : Nat . mtrue) : U -> S$
   and $emptyset tack.r mfalse : U$.
-  By inversion lemma again on the first judgment we obtain $U = Nat$
-
-  But we can also prove
-  #align(center, box(prooftree(
-    axiom(label: T-FALSE, $emptyset tack.r mfalse : Bool$)
-  )))
-
-  From unicity of typing $Bool = U = Nat$ absurd.
-
-
-  It however produces no runtime error, successfully evaluating to $mtrue$.
-  #align(center, box(prooftree(
-    axiom(""),
-    rule(label: BETA, $(fn x : Nat .mtrue) app mfalse -> mtrue$)
-  )))
+  By inversion lemma again on the first judgement we obtain $U = Nat$. But by the inversion lemma on the second judgement we obtain $U = Bool$, which is a contradiction.
 ]
