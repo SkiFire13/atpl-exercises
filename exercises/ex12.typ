@@ -7,8 +7,9 @@
   - Define in Scala a function `and` that behaves as the logical construct `x && y`.
 ]
 #solution[
+  - We could define $M_amp = fn x. fn y. mif x then y melse mfalse$, but this works correctly only with a call-by-name evaluation strategy, because in a call-by-value evaluation strategy $y$ will always be evaluated, even though the intended semantics didn't evaluate it.
   - If we had the unit element, we could define $M_amp$ in $Llang$ as:
-    $M_amp = fn x. fn y. mif x then (y unit) melse mfalse$
+    $M_amp = fn x. fn y. mif x then (y unit) melse mfalse$ where $y$ is a function taking $unit$ and returing a boolean. This would respect the intended semantics with both a call-by-name and a call-by-value evaluation strategy.
   - In Scala we can define `and` as:
     ```scala
     def and(x: Boolean, y: => Boolean): Boolean = if(x) y else false
