@@ -11,6 +11,6 @@
     $M_amp = fn x. fn y. mif x then (y unit) melse mfalse$
   - In Scala we can define `and` as:
     ```scala
-    def and(x: Boolean, y: () => Boolean): Boolean = if(x) y() else false
+    def and(x: Boolean, y: => Boolean): Boolean = if(x) y else false
     ```
 ]
