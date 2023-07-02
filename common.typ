@@ -30,48 +30,10 @@
 ]
 
 #let sub_exercises(ex, amount) = {
-    for i in range(amount) {
-      include "exercises/ex" + str(ex) + "/ex" + str(ex) + "." + str(i + 1) + ".typ"
-      if i + 1 != amount {
-        v(2em)
-        line(length: 100%)
-        v(2em)
-      }
-  }
+  range(amount)
+    .map(i => include "exercises/ex" + str(ex) + "/ex" + str(ex) + "." + str(i + 1) + ".typ")
+    .join(v(2em) + line(length: 100%) + v(2em))
 }
-
-#let fwReduction(lhs, rhs) = [
-  #raw(lhs, lang: "java") $arrow$ #raw(rhs, lang: "java")
-]
-
-#let fwFields(className, ..fields) = [
-  $"fields"(#className) = {$
-  #fields.pos().join(", ")
-  $}$
-]
-
-#let fwLookup(className, field) = [
-  $#field in "fields"(#className)$
-]
-
-#let fwMBody(method, className, ..args, body) = [
-  $"mbody"(#method, #className) = (($
-  #args.pos().join(", ")
-  $),$
-  #raw(body, lang: "java")
-  $)$
-]
-
-#let fwExtends(A, B) = [
-  $"CT"(#A) = $
-  #raw("class " + A + " extends " + B + " {...}", lang: "java")
-]
-
-#let fwType(context, term, type) = [
-  $#context tack.r$
-  #raw(term, lang: "java")
-  $: #type$
-]
 
 #let size = math.op("size")
 #let depth = math.op("depth")
@@ -106,9 +68,7 @@
 #let exn = "exn"
 
 #let ell = text("\u{1D4C1}", font: ())
-
 #let emptyset = text("\u{2205}", font: ())
-
 #let tack2r = "\u{22A9}"
 
 #let SUM = smallcaps("(Sum)")
@@ -183,3 +143,26 @@
 #let INVK-RECV = smallcaps("(Invk-Recv)")
 #let DCAST = smallcaps("(Dcast)")
 #let S-CLASS = smallcaps("(S-Class)")
+
+#let fwReduction(lhs, rhs) = [
+  #raw(lhs, lang: "java") $arrow$ #raw(rhs, lang: "java")
+]
+
+#let fwFields(className, ..fields) = [
+  $"fields"(#className) = { #fields.pos().join(", ") }$
+]
+
+#let fwLookup(className, field) = $#field in "fields"(#className)$
+
+#let fwMBody(method, className, ..args, body) = [
+  $"mbody"(#method, #className)
+  = ( #args.pos().join(", ") , #raw(body, lang: "java") )$
+]
+
+#let fwExtends(A, B) = [
+  $"CT"(#A) = #raw("class " + A + " extends " + B + " {...}", lang: "java")$
+]
+
+#let fwType(context, term, type) = [
+  $#context tack.r #raw(term, lang: "java") : #type$
+]
