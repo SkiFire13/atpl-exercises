@@ -15,8 +15,7 @@
     axiom(""),
     rule(label: MATH-AX, $even (5) -> mfalse$),
     rule(label: IF, $mif even (5) then 5\/2 melse throw 5 -> mif mfalse then 5\/2 melse throw 5$),
-    rule(label: APP-2, $2 app (mif even (5) then 5\/2 melse throw 5) -> 2 app (mif mfalse then 5\/2 melse throw 5)$),
-    rule(label: SUM-RIGHT, $fn y.y + 2 app (mif even (5) then 5\/2 melse throw 5) -> fn y.y + 2 app (mif mfalse then 5\/2 melse throw 5)$),
+    rule(label: APP-2, $fn y.y + 2 app (mif even (5) then 5\/2 melse throw 5) -> fn y.y + 2 app (mif mfalse then 5\/2 melse throw 5)$),
     rule(label: TRY, $try (fn y.y + 2 app (mif even (5) then 5\/2 melse throw 5)) catch fn z.print (z) -> try (fn y.y + 2 app (mif mfalse then 5\/2 melse throw 5)) catch fn z.print (z)$)
   ))
   #v(1em)
