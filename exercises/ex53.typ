@@ -13,7 +13,7 @@
   Prove that the safety teorema sill holds, or exhibit a counterexample.
 ]
 #solution[
-  Consider $M = (fn x: { ell: Nat }. x.ell) {}$. $M$ is well typed:
+  Consider $M = (fn x: { ell: Nat }. x.ell) app {}$. $M$ is well typed:
   #text(size: 7.5pt, align(center, box(prooftree(
     axiom(label: T-VAR, $x : { ell: Nat } tack.r x : { ell: Nat }$),
     rule(label: T-SELECT, $x : { ell: Nat } tack.r x.ell : Nat$),
