@@ -20,7 +20,7 @@
     rule(label: TRY-HANDLE, $try throw 1 catch fn z.print(z) -> (fn z.print(z)) app 1$)
   ))
   #vspace
-        #box(prooftree(
+  #box(prooftree(
     axiom(""),
     rule(label: BETA, $(fn z.print(z)) app 1 -> print(1)$)
   ))
