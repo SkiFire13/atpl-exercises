@@ -28,15 +28,15 @@
     - #T-TRY: $M = try M_1 catch N$ and $emptyset tack.r try M_1 catch N : T$ has a derivation tree of height k+1 while $emptyset tack.r M_1 : T$ and $emptyset tack.r N : T_exn -> T$ have a derivation tree of height at most k. By inductive hypothesis on $M_1$ we distinguish three cases:
       - $M_1 = v$ is a value, then by #TRY-VAL $M = try v catch N -> M' = v$ 
       - $M_1 -> M_1'$, then by #TRY $M = try M_1 catch N -> M' = try M_1' catch N$
-      - $exists v. M_1 = throw v$, then by #TRY-HANDLE $M = try throw v catch N -> M' = N v$
+      - $exists v. M_1 = throw v$, then by #TRY-HANDLE $M = try throw v catch N -> M' = N app v$
     - #T-SUM: we need to add the following cases to the application of inductive hypothesis of the derivation:
       - $M_1 = throw v_1$ then we can apply #RAISE-SUM-1 and obtain $M_1 + M_2 -> throw v_1$
       - $M_1 = v_1$ and $M_2 = throw v_2$ then we can apply #RAISE-SUM-2 and obtain $M_1 + M_2 -> throw v_2$
     - #T-IF: we need to add the following case to the application of inductive hypothesis of the derivation:
       - $M_1 = throw v_1$ we can apply #RAISE-IF and obtain $mif M_1 then M_2 melse M_3 -> throw v_1$
     - #T-APP: we need to add the following cases to the application of inductive hypothesis of the derivation:
-      - $M_1 = throw v_1$ then we can apply the rule #RAISE-APP-1 and obtain $M_1 M_2 -> throw v_1$
-	    - $M_1 = v_1$ and $M_2 = throw v_2$ then we can apply the rule #RAISE-APP-2 and obtain $M_1 M_2-> throw v_2$
+      - $M_1 = throw v_1$ then we can apply the rule #RAISE-APP-1 and obtain $M_1 app M_2 -> throw v_1$
+	    - $M_1 = v_1$ and $M_2 = throw v_2$ then we can apply the rule #RAISE-APP-2 and obtain $M_1 app M_2-> throw v_2$
 
   - *Safety Theorem*: Let $M$ be a closed and well-typed term, then $M$ does not evolve to a stuck term, that is, if $emptyset tack.r M : T$ and $M ->^* M'$ with $M' arrow.r.not$, then $exists v$ such that either $M' = v$ or $M' = throw v$.
 
