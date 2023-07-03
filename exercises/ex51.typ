@@ -17,6 +17,14 @@
   - *Substitution lemma*: we add the following case:
     - #SUBSUMPTION: then $Gamma, x: S tack.r M : U$ derivable with heigth at most $k$ and $U <: T$. By inductive hypothesis $Gamma tack.r M {x := N} : U$ derivable. By #SUBSUMPTION $Gamma tack.r M {x := N}: T$ derivable.
   - *Progress theorem*: we add the following case:
+    - #T-APP: then $M = M_1 M_2$, $Gamma tack.r M_1: T_2 -> T$ and $Gamma tack.r M_2 : T_2$ with height at most $k$. By inductive hypothesis we distinguish two cases:
+      - $M_1 -> M_1'$, then by #APP-1 $M -> M_1' M_2$
+      - $M_1 = v_1$. By inductive hypothesis we distinguish two cases:
+        - $M_2 -> M_2'$ then by #APP-2 $M -> v_1 M_2'$
+        - $M_2 = v_2$. Then by canonical form theorem $v_1 = fn x: S_1. M'$. By #BETA $M -> M' { x := v_2 }$
+    - #T-SELECT: then $M = M'.ell_j$ and $emptyset tack.r M' : {ell_i : T_i #h(1pt) ^ (i in 1..n)}$ with height $k$ and $j in 1..n$. By inductive hypothesis we distinguish two cases:
+      - $M' -> M''$, then by #EVAL-SELECT $M -> M''.ell_j$
+      - $M'$ is a value. Then by canonical form theorem $M' = { k_j = v_j #h(1pt) ^ (j in 1..m) }$ and ${ ell_i #h(1pt) ^ (i in 1..n) } subset.eq { k_j #h(1pt) ^ (j in 1..m) }$, thus $ell_j in { k_j #h(1pt) ^ (j in 1..m) }$ and by #SELECT $M -> v_j$
     - #SUBSUMPTION: then $exists S.$ $emptyset tack.r M : S$ with height at most $k$. By inductive hypothesis either $M$ is a value or $M -> M'$
   - *Type preservation theorem*: We add/change the following cases:
     - #BETA: then $M = (fn x: S_1. M_1) app v -> M_1 { x := v }$. By inversion lemma $Gamma tack.r fn x: S_1. M_1 : S_1 -> T$ and $Gamma tack.r v : S_1$ derivable. By inversion lemma $exists T_1, T_2.$ $S_1 -> T = T_1 -> T_2$, $T_1 <: S_1$, $Gamma, x: S_1 tack.r M_1 : T_2$ derivable, thus $T = T_2$ and $Gamma, x: S_1 tack.r M_1 : T$. By substitution lemma $Gamma tack.r M_1 { x := v } : T$.
