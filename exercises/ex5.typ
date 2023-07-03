@@ -80,5 +80,7 @@
         rule(label: IF-FALSE, $mif mfalse then v_1 melse v_2 -> v_2$),
       ))
     ]
-    This semantic is deterministic because it will always fully evaluate the true branch before evaluating the false branch. Under these semantics the given term would be stuck because it would not be possible to reduce the true branch to a value.
+    This semantic is deterministic because it will always fully evaluate the true branch before evaluating the false branch. Under these semantics the given term would be stuck because it would not be possible to reduce the true branch to a value:
+
+    if false then (3 + true) else 7 $arrow.r.not$
 ]
