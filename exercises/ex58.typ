@@ -25,7 +25,7 @@
       - $M_1 = v$ is a value, then $M = throw v$ satisfies our thesis.
       - $M_1 -> M_1'$, then by #RAISE-1 $M = throw M_1 -> M' = throw M_1'$
       - $exists v. M_1 = throw v$, then by #RAISE-2 $M = throw (throw v) -> M' = throw v$
-    - #T-TRY: $M = try M_1 catch N$ and $emptyset tack.r try M_1 catch N : T$ has a derivation tree of height k+1 while $emptyset tack.r M_1 : T$ and $emptyset tack.r N : T_exn -> T$ have a derivation tree of height at most k. By inductive hypothesis on $M_1$ we distinguish three cases:
+    - #T-TRY: $M = try M_1 catch N$ and $emptyset tack.r try M_1 catch N : T$ has a derivation tree of height k+1 while $emptyset tack.r M_1 : T$ and $emptyset tack.r N : T_exn -> T$ have a derivation tree of height $<= k$. By inductive hypothesis on $M_1$ we distinguish three cases:
       - $M_1 = v$ is a value, then by #TRY-VAL $M = try v catch N -> M' = v$ 
       - $M_1 -> M_1'$, then by #TRY $M = try M_1 catch N -> M' = try M_1' catch N$
       - $exists v. M_1 = throw v$, then by #TRY-HANDLE $M = try throw v catch N -> M' = N app v$
