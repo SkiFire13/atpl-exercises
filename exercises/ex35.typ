@@ -20,7 +20,7 @@
       - $M'$ is a value. Then by canonical form theorem $M' = { ell_i = v_i #h(1pt) ^ (i in 1..n) }$, thus #SELECT applies and $M -> v_j$
   - *Subject reduction*: we add the following cases:
     - #SELECT: then $M = { ell_i = v_i #h(1pt) ^ (i in 1..n) }.ell_j -> v_j$ and $Gamma tack.r M : T_j$ derivable. By inversion lemma $exists T_1..T_n. forall i.$ $Gamma tack.r v_i : T_i$ derivable, thus $Gamma tack.r v_j : T_j$ derivable.
-    - #EVAL-SELECT: then $M = M'.ell_j$, $Gamma tack.r M : T_j$ derivable and $M' -> M''$ with height $k$. By inversion lemma $exists T_1..T_n. Gamma tack.r M' : { ell_i : T_i #h(1pt) ^ (i in 1..n) }$ derivable. By inductive hypothesis $Gamma tack.r M'' : { ell_i : T_i #h(1pt) ^ (i in 1..n) }$, thus by #T-SELECT $Gamma tack.r M''.ell_j : T_j$
+    - #EVAL-SELECT: then $M = M'.ell_j$, $Gamma tack.r M : T_j$ derivable and $M' -> M''$ with height $k$. By inversion lemma $exists n. j in 1..n$, $exists T_1..T_n.$ $Gamma tack.r M' : { ell_i : T_i #h(1pt) ^ (i in 1..n) }$ derivable. By inductive hypothesis $Gamma tack.r M'' : { ell_i : T_i #h(1pt) ^ (i in 1..n) }$, thus by #T-SELECT $Gamma tack.r M''.ell_j : T_j$
     - #EVAL-RECORD: then $M = { ell_i = v_i #h(1pt) ^ (i in 1..j-1), ell_j = M_j, ell_k = M_k #h(1pt) ^ (k in j+1..n) }$, $Gamma tack.r M : T$ derivable and $M_j -> M_j'$ with height $k$. By inversion lemma $exists T_1..T_n. forall i. Gamma tack.r M_i : T_i$. By inductive hypothesis $Gamma tack.r M_j' : T_j$, thus by #T-RECORD $Gamma tack.r M' : T$
   - *Safety theorem*: Immediate from progress theorem and subject reduction.
 ]
