@@ -16,11 +16,11 @@
     $
   - substitutions, we add the following cases:
     $
-      unit{x:=N} &= unit \
-      (M_1, M_2){x:=N} &= (M_1{x:=N}, M_2{x:=N}) \
-      M.\_1{x:=N} &= (M{x:=N}).\_1 \
-      M.\_2{x:=N} &= (M{x:=N}).\_2 \ 
-      M.ell {x := N} &= (M{ x := N }).ell \
+      unit {x:=N} &= unit \
+      (M_1, M_2){x:=N} &= (M_1 {x:=N}, M_2 {x:=N}) \
+      M.\_1 {x:=N} &= (M {x:=N}).\_1 \
+      M.\_2 {x:=N} &= (M {x:=N}).\_2 \ 
+      M.ell {x := N} &= (M { x := N }).ell \
       {ell_i = M_i #h(1pt) ^ (i in 1..n)} {x := N} &= { ell_i = M_i {x := N} #h(1pt) ^ (i in 1..n) }
     $
 ]

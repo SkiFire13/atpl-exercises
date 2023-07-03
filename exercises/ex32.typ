@@ -25,8 +25,8 @@
       - $exists M''. M' -> M''$, then by #PROJECT-i $M'.\_i -> M''.\_i$
       - $M' = v$ is a value. Then by canonical forms theorem $v = (v_1, v_2)$. Thus by #PAIR-i $M'.\_i = (v_1, v_2).\_i -> v_i$.
   - *Substitution theorem*: add the following inductive cases:
-    - #T-PAIR: then $M = (M_1, M_2)$ and $Gamma, x: S tack.r M_i : T_i$ by height at most $k$. By inductive hypothesis $Gamma tack.r M_i{x := N}: T_i$ and thus by #T-PAIR $Gamma tack.r M{x := N} : T_1 * T_2$
-    - #T-PROJECT-i: then $M = M'.\_i$ and $Gamma, x: S tack.r M' : T_1 * T_2$ of height $k$. By inductive hypothesis $Gamma tack.r M' {x := N} : T_1 * T_2$, thus by #T-PROJECT-i $Gamma tack.r M{x := N} : T_i$
+    - #T-PAIR: then $M = (M_1, M_2)$ and $Gamma, x: S tack.r M_i : T_i$ by height at most $k$. By inductive hypothesis $Gamma tack.r M_i {x := N}: T_i$ and thus by #T-PAIR $Gamma tack.r M {x := N} : T_1 * T_2$
+    - #T-PROJECT-i: then $M = M'.\_i$ and $Gamma, x: S tack.r M' : T_1 * T_2$ of height $k$. By inductive hypothesis $Gamma tack.r M' {x := N} : T_1 * T_2$, thus by #T-PROJECT-i $Gamma tack.r M {x := N} : T_i$
   - *Type preservation theorem*: add the following cases:
     - #PAIR-i: then from hypothesis $Gamma tack.r (v_1, v_2).\_i : T_i$ and by inversion lemma $exists T_1, T_2.$ $Gamma tack.r v_i : T_i$, which was the goal.
     - #PROJECT-i: then from hypothesis $Gamma tack.r M.\_i : T_i$ and by inversion lemma $exists T_1, T_2.$ $Gamma tack.r M : T_1 * T_2$. By inductive hypothesis $Gamma tack.r M' : T_1 * T_2$. Thus by #T-PROJECT-i, $Gamma tack.r M'.\_i : T_i$
