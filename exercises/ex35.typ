@@ -5,9 +5,7 @@
   Prove the safety theorem for the language containing integers, Booleans, functions and records.
 ]
 #solution[
-  - *Inversion of typing*: we add the following cases:
-    - if $Gamma tack.r M.ell_j : T_j$ is derivable then $exists n. exists T_1..T_n.$ $Gamma tack.r M : { ell_i : T_i #h(1pt) ^ (i in 1..n) }$ derivable.
-    - if $Gamma tack.r { ell_i = M_i #h(1pt) ^ (i in 1..n) } : T$ is derivable then $exists T_1..T_n.$ $T = {ell_i : T_i #h(1pt) ^ (i in 1..n)}$ and $forall i.$ $Gamma tack.r M_i : T_i$ derivable.
+  - *Inversion of typing*: see previous exercise.
   - *Canonical forms*: we add the following case:
     - if $v$ is a value and $emptyset tack.r v : { ell_i : T_i #h(1pt) ^ (i in 1..n) }$ is derivable then $v = { ell_i = v_i #h(1pt) ^ (i in 1..n) }$. Proof is immediate.
   - *Substitution lemma*: we add the following cases:
