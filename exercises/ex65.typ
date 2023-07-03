@@ -13,7 +13,7 @@
 #solution[
   - ```java ((Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)).snd```
 
-  It is well-typed:
+    It is well-typed:
 
     $pi_("av") =$
     #align(center, box(prooftree(
@@ -75,7 +75,7 @@
       rule(n: 3, label: DCAST, fwType(emptyset, "(Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)", "Pair")),
     ))))
 
-    #v(2em)
+    #vspace
 
     #text(size: 11pt, align(center, box(prooftree(
       axiom($pi_("f ")$),
@@ -84,7 +84,7 @@
       rule(n: 3, label: FIELD, fwType(emptyset, "((Pair) (new Pair(new Pair(new A(), new B()), new A()).fst)).snd", "Object"))
     ))))
 
-  It reduces to a value:
+    It reduces to a value:
 
     #text(size: 8pt, align(center, box(prooftree(
       axiom(pairFields),
@@ -97,7 +97,7 @@
     #text(size: 11pt, align(center, box(prooftree(
       axiom(label: REFLEX, $Pair <: Pair$),
       rule(label: CAST-NEW, fwReduction("(Pair) new Pair(new A(), new B())", "new Pair(new A(), new B())")),
-      rule(label: FIELD, fwReduction("((Pair) (new Pair(new A(), new B())).snd", "(new Pair(new A(), new B())).snd"))
+      rule(label: FIELD, fwReduction("(Pair) (new Pair(new A(), new B())).snd", "(new Pair(new A(), new B())).snd"))
     ))))
 
     #align(center, box(prooftree(
@@ -109,31 +109,31 @@
   - ```java (new Pair(new Pair(new A(), new B()), new A()).fst).snd```
 
     It is not well-typed:
-      Suppose that it is well typed, by inversion lemma $exists T$ s.t. #fwType(emptyset, "new Pair(new Pair(new A(), new B()), new A()).fst", "T")
-      and #fwLookup("T", "snd").
-      But
+    Suppose that it is well typed, by inversion lemma $exists T$ s.t. #fwType(emptyset, "new Pair(new Pair(new A(), new B()), new A()).fst", "T")
+    and #fwLookup("T", "snd").
+    But
 
-      #text(size: 10pt, align(center, box(prooftree(
-        axiom($pi_2$),
-        axiom(pairFields),
-        axiom(fwLookup("Pair", "fst")),
-        rule(n: 3, label: FIELD, fwType(emptyset, "new Pair(new Pair(new A(), new B()), new A()).fst", "Object")),
-      ))))
+    #text(size: 10pt, align(center, box(prooftree(
+      axiom($pi_2$),
+      axiom(pairFields),
+      axiom(fwLookup("Pair", "fst")),
+      rule(n: 3, label: FIELD, fwType(emptyset, "new Pair(new Pair(new A(), new B()), new A()).fst", "Object")),
+    ))))
 
-      that implies $T = "Object"$ but #fwFields("Object") which is a contraddiction.
+    that implies $T = "Object"$ but #fwFields("Object") which is a contraddiction.
 
     It reduces to a value:
 
-      #text(size: 8pt, align(center, box(prooftree(
-        axiom(pairFields),
-        axiom(fwLookup("Pair", "fst")),
-        rule(n: 2, label: PROJ-NEW, fwReduction("new Pair(new Pair(new A(), new B()), new A()).fst", "new Pair(new A(), new B())")),
-        rule(label: FIELD, fwReduction("(new Pair(new Pair(new A(), new B()), new A()).fst)).snd", "(new Pair(new A(), new B())).snd"))
-      ))))
+    #text(size: 8pt, align(center, box(prooftree(
+      axiom(pairFields),
+      axiom(fwLookup("Pair", "fst")),
+      rule(n: 2, label: PROJ-NEW, fwReduction("new Pair(new Pair(new A(), new B()), new A()).fst", "new Pair(new A(), new B())")),
+      rule(label: FIELD, fwReduction("(new Pair(new Pair(new A(), new B()), new A()).fst).snd", "(new Pair(new A(), new B())).snd"))
+    ))))
 
-      #align(center, box(prooftree(
-        axiom(pairFields),
-        axiom(fwLookup("Pair", "snd")),
-        rule(n: 2, label: PROJ-NEW, fwReduction("(new Pair(new A(), new B())).snd", "new B()"))
-      )))
+    #align(center, box(prooftree(
+      axiom(pairFields),
+      axiom(fwLookup("Pair", "snd")),
+      rule(n: 2, label: PROJ-NEW, fwReduction("(new Pair(new A(), new B())).snd", "new B()"))
+    )))
 ]
