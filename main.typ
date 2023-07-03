@@ -6,7 +6,7 @@
   date: "2nd Semester 2022/23",
 )
 
-#outline(title: "Table of Exercises")
+#include "index.typ"
 
 #for i in range(66) {
   include "exercises/ex" + str(i+1) + ".typ"
