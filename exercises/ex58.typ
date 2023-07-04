@@ -10,7 +10,7 @@
     - If $Gamma tack.r try M catch N : T$ then $Gamma tack.r M : T$ and $Gamma tack.r N : T_exn -> T$
   - *Type Preservation Theorem*: We add the following cases:
     - #TRY: $M = try M_1 catch N -> M' = try M_1' catch N$ has a derivation tree of height k+1 and $M_1 -> M_1'$ has a derivation tree of height k, by inversion lemma $Gamma tack.r M_1 : T$ and $Gamma tack.r N : T_exn -> T$, by inductive hypothesis $Gamma tack.r M_1' : T$ so by #T-TRY $Gamma tack.r M' : T$
-    - #TRY-HANDLE: $try throw v catch M -> M app v$, by inversion lemma $Gamma tack.r throw v : T$ and $Gamma tack.r M : T_exn -> T$, by #T-RAISE $Gamma tack.r v : T_exn$ and so by #T-APP $Gamma tack.r M app v : T$
+    - #TRY-HANDLE: $try throw v catch M -> M app v$, by inversion lemma $Gamma tack.r throw v : T$ and $Gamma tack.r M : T_exn -> T$, by inversion lemma again $Gamma tack.r v : T_exn$ and so by #T-APP $Gamma tack.r M app v : T$
     - #TRY-VAL: $try v catch M -> v$ and by inversion lemma $Gamma tack.r v : T$
     - #RAISE-1: $M = throw M_1 -> M' = throw M_1'$, by inversion lemma $Gamma tack.r M_1 : T_exn$, by inductive hypothesis $Gamma tack.r M_1' : T_exn$ and so by #T-RAISE $Gamma tack.r M' = throw M_1' : T$
     - #RAISE-2: $throw (throw v) -> throw v$, by inversion lemma $Gamma tack.r throw v : T_exn$, by inversion lemma again $Gamma tack.r v : T_exn$ so by #T-RAISE $Gamma tack.r throw v : T$

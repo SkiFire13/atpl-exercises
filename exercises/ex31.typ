@@ -27,7 +27,7 @@
 
     #align(center, box(prooftree(
       axiom($$),
-      rule(label: PAIR-1, $(5, mfalse).\_1 -> 1$)
+      rule(label: PAIR-1, $(5, mfalse).\_1 -> 5$)
     )))
 
   - $M_2$:

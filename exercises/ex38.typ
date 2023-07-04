@@ -7,7 +7,7 @@
 #solution[
   - *Inversion of typing*: we add the following cases:
     - if $Gamma tack.r angle.l ell_j = M angle.r : T$ is derivable then $exists n.$ $j in 1..n$, $exists T_1...T_n.$ $T = angle.l ell_i: T_i #h(1pt) ^ (i in 1..n) angle.r$ and $Gamma tack.r M : T_j$ derivable;
-    - if $Gamma tack.r M match { case ell_i = x_i => M_i #h(1pt) ^ (i in 1..n) } : T$ is derivable then $exists n, T_1..T_n. forall i in 1..n. Gamma, x_i: T_i tack.r M_i : T$ and $Gamma tack.r M : angle.l ell_i : T_i #h(1pt) ^ (i in 1..n) angle.r$ derivable.
+    - if $Gamma tack.r M match { case ell_i = x_i => M_i #h(1pt) ^ (i in 1..n) } : T$ is derivable then $exists T_1..T_n. forall i in 1..n. Gamma, x_i: T_i tack.r M_i : T$ and $Gamma tack.r M : angle.l ell_i : T_i #h(1pt) ^ (i in 1..n) angle.r$ derivable.
   - *Canonical forms*: we add the following cases:
     - if $v$ is a value and $Gamma tack.r v : angle.l ell_i : T_i #h(1pt) ^ (i in 1..n) angle.r$ then $exists j in 1..n.$ $v = angle.l ell_j = v_j angle.r$
   - *Substitution lemma*: we add the following cases:
